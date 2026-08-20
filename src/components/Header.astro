@@ -1,31 +1,20 @@
 ---
-import { site, nav } from '../site.config';
+import { site, nav, url } from '../site.config';
 const path = Astro.url.pathname;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const current = path.replace(base, '') || '/';
 const isActive = (href: string) =>
-  href === '/' ? path === '/' : path.startsWith(href);
+  href === '/' ? current === '/' : current.startsWith(href);
 ---
 
 <header class="sticky top-0 z-50 border-b border-sand-300/70 bg-sand-50/85 backdrop-blur-md">
   <div class="container-page flex items-center justify-between py-3">
-    <!-- לוגו -->
-    <a href="/" class="group flex items-center gap-2.5">
-      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <circle cx="17" cy="17" r="16" stroke="var(--color-terracotta-500)" stroke-width="1.5" />
-        <path d="M9 22V13l8-5 8 5v9" stroke="var(--color-sea-500)" stroke-width="1.5" stroke-linejoin="round" />
-        <path d="M13 22v-6M17 22v-6M21 22v-6" stroke="var(--color-sea-500)" stroke-width="1.5" />
-        <circle cx="17" cy="17" r="2" fill="var(--color-gold-500)" />
-      </svg>
-      <span class="font-serif text-xl font-bold text-ink-900 group-hover:text-terracotta-500 transition-colors">
-        {site.name}
-      </span>
-    </a>
-
-    <!-- ניווט דסקטופ -->
+    <!-- ניווט דסקטופ (מימין) -->
     <nav class="hidden items-center gap-7 md:flex" aria-label="ניווט ראשי">
       {
         nav.map((item) => (
           <a
-            href={item.href}
+            href={url(item.href)}
             class:list={[
               'relative text-[0.98rem] font-medium transition-colors hover:text-terracotta-500',
               isActive(item.href) ? 'text-terracotta-500' : 'text-ink-700',
@@ -40,7 +29,7 @@ const isActive = (href: string) =>
       }
     </nav>
 
-    <!-- תפריט מובייל -->
+    <!-- תפריט מובייל (מימין) -->
     <details class="relative md:hidden">
       <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md text-ink-900 [&::-webkit-details-marker]:hidden">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -48,13 +37,13 @@ const isActive = (href: string) =>
         </svg>
       </summary>
       <nav
-        class="absolute end-0 mt-2 w-52 rounded-lg border border-sand-300 bg-sand-50 p-2 shadow-[var(--shadow-warm)]"
+        class="absolute start-0 mt-2 w-52 rounded-lg border border-sand-300 bg-sand-50 p-2 shadow-[var(--shadow-warm)]"
         aria-label="ניווט נייד"
       >
         {
           nav.map((item) => (
             <a
-              href={item.href}
+              href={url(item.href)}
               class:list={[
                 'block rounded-md px-3 py-2.5 text-[0.98rem] font-medium hover:bg-sand-100',
                 isActive(item.href) ? 'text-terracotta-500' : 'text-ink-700',
@@ -66,5 +55,18 @@ const isActive = (href: string) =>
         }
       </nav>
     </details>
+
+    <!-- לוגו (משמאל) -->
+    <a href={url('/')} class="group flex items-center gap-2.5">
+      <span class="font-serif text-xl font-bold text-ink-900 group-hover:text-terracotta-500 transition-colors">
+        {site.name}
+      </span>
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <circle cx="17" cy="17" r="16" stroke="var(--color-terracotta-500)" stroke-width="1.5" />
+        <path d="M9 22V13l8-5 8 5v9" stroke="var(--color-sea-500)" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M13 22v-6M17 22v-6M21 22v-6" stroke="var(--color-sea-500)" stroke-width="1.5" />
+        <circle cx="17" cy="17" r="2" fill="var(--color-gold-500)" />
+      </svg>
+    </a>
   </div>
 </header>

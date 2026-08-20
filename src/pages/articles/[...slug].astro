@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTASection from '../../components/CTASection.astro';
 import MosaicDivider from '../../components/MosaicDivider.astro';
 import PostCard from '../../components/PostCard.astro';
-import { site } from '../../site.config';
+import { site, url } from '../../site.config';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
@@ -43,7 +43,7 @@ const jsonLd = {
   '@type': 'Article',
   headline: title,
   description,
-  image: new URL(heroImage, Astro.site).href,
+  image: new URL(url(heroImage), Astro.site).href,
   datePublished: publishDate.toISOString(),
   articleSection: category,
   author: { '@type': 'Person', name: site.guideName },
@@ -62,10 +62,10 @@ const jsonLd = {
 >
   <!-- כותרת עם תמונת רקע -->
   <header class="relative isolate overflow-hidden">
-    <img src={heroImage} alt={heroImageAlt} class="absolute inset-0 -z-10 h-full w-full object-cover" fetchpriority="high" />
+    <img src={url(heroImage)} alt={heroImageAlt} class="absolute inset-0 -z-10 h-full w-full object-cover" fetchpriority="high" />
     <div class="absolute inset-0 -z-10" style="background: linear-gradient(180deg, rgba(42,35,28,0.35), rgba(42,35,28,0.78));" aria-hidden="true"></div>
     <div class="container-prose flex min-h-[52vh] flex-col justify-end pb-12 pt-28 text-sand-50">
-      <a href="/articles" class="mb-4 inline-flex w-fit items-center gap-1.5 text-sm text-sand-100/90 hover:text-gold-400">
+      <a href={url('/articles')} class="mb-4 inline-flex w-fit items-center gap-1.5 text-sm text-sand-100/90 hover:text-gold-400">
         → חזרה לכל המאמרים
       </a>
       <span class="mb-3 inline-flex w-fit rounded-full bg-sand-50/15 px-3 py-1 text-xs font-medium backdrop-blur-sm">

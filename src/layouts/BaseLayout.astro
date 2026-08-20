@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
+import { url } from '../site.config';
 
 interface Props {
   title?: string;
@@ -20,7 +21,7 @@ const props = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- גופנים עבריים: Frank Ruhl Libre (סריף) + Heebo (סאנס) -->
@@ -31,8 +32,8 @@ const props = Astro.props;
       rel="stylesheet"
     />
 
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="alternate" type="application/rss+xml" title="מאמרים על קיסריה" href="/rss.xml" />
+    <link rel="sitemap" href={url('/sitemap-index.xml')} />
+    <link rel="alternate" type="application/rss+xml" title="מאמרים על קיסריה" href={url('/rss.xml')} />
 
     <SEO {...props} />
   </head>

@@ -5,7 +5,7 @@ import Hero from '../components/Hero.astro';
 import PostCard from '../components/PostCard.astro';
 import CTASection from '../components/CTASection.astro';
 import MosaicDivider from '../components/MosaicDivider.astro';
-import { site } from '../site.config';
+import { site, url } from '../site.config';
 
 const allPosts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
@@ -54,7 +54,7 @@ const jsonLd = {
   <section class="container-page py-12">
     <div class="mb-8 flex items-end justify-between">
       <h2 class="rule-gold font-serif text-2xl text-ink-900">מהמאמרים האחרונים</h2>
-      <a href="/articles" class="text-sm font-medium text-terracotta-500 hover:text-terracotta-600">
+      <a href={url('/articles')} class="text-sm font-medium text-terracotta-500 hover:text-terracotta-600">
         לכל המאמרים →
       </a>
     </div>
@@ -74,7 +74,7 @@ const jsonLd = {
           המטרה שלי פשוטה: שתצאו מהסיור רואים את העיר אחרת לגמרי.
         </p>
         <a
-          href="/about"
+          href={url('/about')}
           class="mt-6 inline-block rounded-full bg-sea-500 px-6 py-2.5 font-medium text-sand-50 transition-colors hover:bg-sea-600"
         >
           קראו עוד עליי
@@ -82,7 +82,7 @@ const jsonLd = {
       </div>
       <div class="overflow-hidden rounded-xl shadow-[var(--shadow-warm)]">
         <img
-          src="/images/illustrations/about-portrait.svg"
+          src={url('/images/illustrations/about-portrait.svg')}
           alt="דיוקן המדריך על רקע חופי קיסריה"
           class="h-full w-full object-cover"
           loading="lazy"

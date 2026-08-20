@@ -1,5 +1,5 @@
 ---
-import { site, nav, whatsappUrl } from '../site.config';
+import { site, nav, whatsappUrl, url } from '../site.config';
 import MosaicDivider from './MosaicDivider.astro';
 const year = new Date().getFullYear();
 ---
@@ -23,7 +23,7 @@ const year = new Date().getFullYear();
           {
             nav.map((item) => (
               <li>
-                <a href={item.href} class="text-sand-200/90 transition-colors hover:text-gold-400">
+                <a href={url(item.href)} class="text-sand-200/90 transition-colors hover:text-gold-400">
                   {item.label}
                 </a>
               </li>

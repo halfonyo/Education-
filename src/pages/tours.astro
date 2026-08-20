@@ -1,26 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MosaicDivider from '../components/MosaicDivider.astro';
-import { site, whatsappUrl } from '../site.config';
+import { site, whatsappUrl, url } from '../site.config';
 
 const tours = [
   {
-    name: 'הסיור הקלאסי בקיסריה',
-    duration: 'כשעתיים וחצי',
-    audience: 'מתאים לכולם',
-    desc: 'המסלול המלא בין אתרי המורשת: התיאטרון, הארמון, ההיפודרום, הנמל והעיר הצלבנית. הסיפור השלם של העיר, מהורדוס ועד ימינו.',
+    name: 'סיור זוגי בקיסריה',
+    duration: 'לזוגות',
+    audience: 'חוויה משותפת',
+    desc: 'סיור מיוחד לזוגות. דרך הסיפורים על הדמויות שפעלו בקיסריה עולות תובנות על זוגיות ועל הקשר בין בני הזוג — שיחה על החיים שלכם, על רקע אחד הנופים היפים בארץ.',
   },
   {
-    name: 'קיסריה למשפחות',
-    duration: 'כשעתיים',
-    audience: 'הורים וילדים',
-    desc: 'סיור מותאם עם סיפורים, חידות ונקודות עצירה שמדברות גם לילדים — בלי לוותר על העומק למבוגרים.',
+    name: 'הסיור המלא בקיסריה',
+    duration: 'המסלול המלא',
+    audience: 'לאוהבי ללמוד ולהקשיב',
+    desc: 'הליכה מחוף הקשתות אל הגן הלאומי, דרך בית הכנסת העתיק. הסיפור השלם של העיר, למי שאוהב ללמוד ולהקשיב — מתאים במיוחד לגמלאים, אך גם לכל גיל שסקרן להעמיק.',
   },
   {
-    name: 'סיור מעמיק לחובבי היסטוריה',
-    duration: 'שלוש שעות ומעלה',
-    audience: 'קבוצות תוכן',
-    desc: 'צלילה לפרטים: ארכיאולוגיה, מקורות היסטוריים, שכבות בנייה וסיפורי התגליות הגדולות. לחובבי הז׳אנר האמיתיים.',
+    name: 'סיור סליחות בקיסריה',
+    duration: 'עונתי',
+    audience: 'הימים הנוראים',
+    desc: 'סיור מיוחד לעונת הסליחות. דרך סיפורה של קיסריה נתחבר לאווירת הימים הנוראים, ונלמד על מהותה של הסליחה והתשובה. פעיל רק בעונה המתאימה.',
   },
 ];
 
@@ -36,7 +36,7 @@ const jsonLd = {
 
 <BaseLayout
   title="סיורים בקיסריה"
-  description="סיורים מודרכים בקיסריה העתיקה בהתאמה אישית — למשפחות, קבוצות וחובבי היסטוריה. תיאום ופרטים."
+  description="סיורים מודרכים בקיסריה עם ד״ר יוחאי חלפון — סיור זוגי, הסיור המלא מחוף הקשתות לגן הלאומי, וסיור סליחות. תיאום ופרטים."
   jsonLd={jsonLd}
 >
   <section class="container-page pt-16 pb-8 text-center">
@@ -99,7 +99,7 @@ const jsonLd = {
       <a href={whatsappUrl()} target="_blank" rel="noopener" class="rounded-full bg-terracotta-500 px-8 py-3 font-medium text-sand-50 transition-colors hover:bg-terracotta-600">
         תיאום בוואטסאפ
       </a>
-      <a href="/contact" class="rounded-full border border-sand-300 px-8 py-3 font-medium text-ink-700 transition-colors hover:border-terracotta-400 hover:text-terracotta-500">
+      <a href={url('/contact')} class="rounded-full border border-sand-300 px-8 py-3 font-medium text-ink-700 transition-colors hover:border-terracotta-400 hover:text-terracotta-500">
         לכל דרכי הקשר
       </a>
     </div>

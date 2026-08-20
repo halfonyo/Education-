@@ -1,5 +1,5 @@
 ---
-import { site } from '../site.config';
+import { site, url } from '../site.config';
 
 interface Props {
   title?: string;
@@ -21,7 +21,7 @@ const {
 
 const fullTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const imageURL = new URL(image, Astro.site);
+const imageURL = new URL(url(image), Astro.site);
 ---
 
 <title>{fullTitle}</title>

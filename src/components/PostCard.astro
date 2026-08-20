@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import { url } from '../site.config';
 
 interface Props {
   post: CollectionEntry<'posts'>;
@@ -22,10 +22,10 @@ const dateLabel = new Intl.DateTimeFormat('he-IL', {
     featured ? 'md:flex-row' : '',
   ]}
 >
-  <a href={`/articles/${post.slug}`} class="block overflow-hidden" class:list={[featured ? 'md:w-1/2' : '']}>
+  <a href={url(`/articles/${post.slug}`)} class="block overflow-hidden" class:list={[featured ? 'md:w-1/2' : '']}>
     <div class:list={['overflow-hidden', featured ? 'h-64 md:h-full' : 'h-52']}>
       <img
-        src={heroImage}
+        src={url(heroImage)}
         alt={heroImageAlt}
         loading="lazy"
         class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -43,7 +43,7 @@ const dateLabel = new Intl.DateTimeFormat('he-IL', {
         featured ? 'text-2xl md:text-3xl' : 'text-xl',
       ]}
     >
-      <a href={`/articles/${post.slug}`} class="after:absolute after:inset-0">
+      <a href={url(`/articles/${post.slug}`)} class="after:absolute after:inset-0">
         {title}
       </a>
     </h3>

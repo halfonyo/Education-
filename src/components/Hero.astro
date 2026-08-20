@@ -1,6 +1,8 @@
 ---
 import { site } from '../site.config';
 
+import { url } from '../site.config';
+
 interface Props {
   image: string;
   imageAlt: string;
@@ -11,7 +13,7 @@ const { image, imageAlt } = Astro.props;
 <section class="relative isolate overflow-hidden">
   <!-- תמונת רקע רוחב מלא -->
   <img
-    src={image}
+    src={url(image)}
     alt={imageAlt}
     class="absolute inset-0 -z-10 h-full w-full object-cover"
     fetchpriority="high"
@@ -39,13 +41,13 @@ const { image, imageAlt } = Astro.props;
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a
-          href="/articles"
+          href={url('/articles')}
           class="rounded-full bg-terracotta-500 px-7 py-3 font-medium text-sand-50 shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-terracotta-600"
         >
           לקריאת המאמרים
         </a>
         <a
-          href="/tours"
+          href={url('/tours')}
           class="rounded-full border border-sand-50/50 bg-sand-50/5 px-7 py-3 font-medium text-sand-50 backdrop-blur-sm transition-colors hover:bg-sand-50/15"
         >
           על הסיורים

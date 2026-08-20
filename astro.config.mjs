@@ -5,7 +5,9 @@ import tailwindcss from '@tailwindcss/vite';
 
 // עדכן את הכתובת לדומיין הסופי כשיהיה
 export default defineConfig({
-  site: 'https://caesarea-guide.example.com',
+  // כתובת האתר ב-GitHub Pages. כשיהיה דומיין משלך — עדכן כאן והסר את base.
+  site: 'https://halfonyo.github.io',
+  base: '/Education-',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
   vite: {

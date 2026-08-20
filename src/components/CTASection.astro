@@ -1,5 +1,5 @@
 ---
-import { whatsappUrl } from '../site.config';
+import { whatsappUrl, url } from '../site.config';
 
 interface Props {
   title?: string;
@@ -33,7 +33,7 @@ const {
       </p>
       <div class="relative mt-8 flex flex-wrap items-center justify-center gap-3">
         <a
-          href="/tours"
+          href={url('/tours')}
           class="rounded-full bg-sand-50 px-7 py-3 font-medium text-terracotta-600 shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-white"
         >
           לפרטי הסיורים
