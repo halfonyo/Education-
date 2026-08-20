@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bcd6d9"/><stop offset="0.6" stop-color="#e6d3ad"/><stop offset="1" stop-color="#d8c191"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <!-- חול / חוף -->
+  <rect y="720" width="1600" height="180" fill="#cfae7f"/>
+  <!-- אמת המים — שורת קשתות -->
+  <g fill="#a5843f">
+    <rect x="80" y="360" width="1440" height="90"/>
+    <rect x="80" y="450" width="1440" height="30" fill="#8a6a34"/>
+  </g>
+  <g fill="#d8c191">
+    <!-- פתחי הקשתות -->
+    <path d="M140 720 V520 a60 60 0 0 1 120 0 V720 Z"/>
+    <path d="M320 720 V520 a60 60 0 0 1 120 0 V720 Z"/>
+    <path d="M500 720 V520 a60 60 0 0 1 120 0 V720 Z"/>
+    <path d="M680 720 V520 a60 60 0 0 1 120 0 V720 Z"/>
+    <path d="M860 720 V520 a60 60 0 0 1 120 0 V720 Z"/>
+    <path d="M1040 720 V520 a60 60 0 0 1 120 0 V720 Z"/>
+    <path d="M1220 720 V520 a60 60 0 0 1 120 0 V720 Z"/>
+    <path d="M1400 720 V520 a60 60 0 0 1 120 0 V720 Z"/>
+  </g>
+  <g fill="#a5843f">
+    <rect x="120" y="450" width="1360" height="270" fill="none"/>
+    <rect x="200" y="450" width="40" height="270"/>
+    <rect x="380" y="450" width="40" height="270"/>
+    <rect x="560" y="450" width="40" height="270"/>
+    <rect x="740" y="450" width="40" height="270"/>
+    <rect x="920" y="450" width="40" height="270"/>
+    <rect x="1100" y="450" width="40" height="270"/>
+    <rect x="1280" y="450" width="40" height="270"/>
+  </g>
+  <text x="800" y="850" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="46" fill="#8a4a30" opacity="0.9">אמת המים</text>
+</svg>

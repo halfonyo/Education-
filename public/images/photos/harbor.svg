@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8c48f"/><stop offset="1" stop-color="#d99b63"/>
+    </linearGradient>
+    <linearGradient id="sea3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f7d8c"/><stop offset="1" stop-color="#1b3944"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg3)"/>
+  <circle cx="1200" cy="230" r="80" fill="#f6e6c6" opacity="0.85"/>
+  <rect y="430" width="1600" height="470" fill="url(#sea3)"/>
+  <!-- שוברי גלים של הנמל -->
+  <path d="M0 470 Q 400 430 760 480 L 760 540 Q 400 500 0 540 Z" fill="#8a6a34" opacity="0.9"/>
+  <path d="M1600 470 Q 1250 435 980 490 L 980 550 Q 1250 505 1600 540 Z" fill="#8a6a34" opacity="0.9"/>
+  <!-- מגדלור בכניסה -->
+  <g fill="#9c4a2e">
+    <rect x="740" y="360" width="34" height="130"/>
+    <rect x="732" y="345" width="50" height="20"/>
+  </g>
+  <!-- ספינה -->
+  <g fill="#2a231c" opacity="0.85">
+    <path d="M360 560 h150 l-24 40 h-102 Z"/>
+    <rect x="432" y="470" width="6" height="90"/>
+    <path d="M438 480 l70 30 -70 20 Z" fill="#b65d3c"/>
+  </g>
+  <text x="800" y="840" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="46" fill="#f6f0e6" opacity="0.9">נמל סבסטוס</text>
+</svg>

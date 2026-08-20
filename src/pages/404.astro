@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MosaicDivider from '../components/MosaicDivider.astro';
+---
+
+<BaseLayout title="הדף לא נמצא" description="הדף שחיפשתם לא קיים.">
+  <section class="container-prose flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+    <p class="font-serif text-7xl text-terracotta-500">404</p>
+    <MosaicDivider class="my-6" />
+    <h1 class="font-serif text-3xl text-ink-900">הדף הזה נעלם בין החורבות</h1>
+    <p class="mt-4 text-ink-700">כנראה שהקישור שגוי או שהדף הוסר. בואו נחזור לדרך הראשית.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/" class="rounded-full bg-terracotta-500 px-7 py-3 font-medium text-sand-50 transition-colors hover:bg-terracotta-600">לדף הבית</a>
+      <a href="/articles" class="rounded-full border border-sand-300 px-7 py-3 font-medium text-ink-700 transition-colors hover:border-terracotta-400 hover:text-terracotta-500">למאמרים</a>
+    </div>
+  </section>
+</BaseLayout>

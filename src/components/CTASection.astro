@@ -1,0 +1,52 @@
+---
+import { whatsappUrl } from '../site.config';
+
+interface Props {
+  title?: string;
+  text?: string;
+  variant?: 'full' | 'inline';
+}
+const {
+  title = 'רוצים לחוות את זה בשטח?',
+  text = 'כל אבן בקיסריה מספרת סיפור. בסיור מודרך נחבר בין ההיסטוריה למה שרואים בעיניים — ותצאו עם חוויה שנשארת.',
+  variant = 'full',
+} = Astro.props;
+---
+
+<section
+  class:list={[
+    'relative overflow-hidden text-sand-50',
+    variant === 'full' ? 'my-4' : 'my-12 rounded-2xl',
+  ]}
+>
+  <div class="bg-terracotta-500">
+    <div class="container-page relative py-14 text-center">
+      <!-- קישוט פינתי בסגנון אבן -->
+      <div class="pointer-events-none absolute inset-0 opacity-[0.08]" aria-hidden="true"
+           style="background-image: radial-gradient(circle, #fff 1.5px, transparent 1.5px); background-size: 26px 26px;">
+      </div>
+      <h2 class="relative mx-auto max-w-2xl font-serif text-3xl font-bold sm:text-4xl">
+        {title}
+      </h2>
+      <p class="relative mx-auto mt-4 max-w-xl text-sand-50/95">
+        {text}
+      </p>
+      <div class="relative mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a
+          href="/tours"
+          class="rounded-full bg-sand-50 px-7 py-3 font-medium text-terracotta-600 shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-white"
+        >
+          לפרטי הסיורים
+        </a>
+        <a
+          href={whatsappUrl()}
+          target="_blank"
+          rel="noopener"
+          class="rounded-full border border-sand-50/70 px-7 py-3 font-medium text-sand-50 transition-colors hover:bg-sand-50/10"
+        >
+          תיאום בוואטסאפ
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

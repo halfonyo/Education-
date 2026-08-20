@@ -1,0 +1,62 @@
+---
+import { site, nav, whatsappUrl } from '../site.config';
+import MosaicDivider from './MosaicDivider.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 bg-sea-700 text-sand-100">
+  <div class="container-page py-14">
+    <MosaicDivider class="mb-10 opacity-80" />
+    <div class="grid gap-10 md:grid-cols-3">
+      <!-- על האתר -->
+      <div>
+        <h3 class="mb-3 font-serif text-xl text-sand-50">{site.name}</h3>
+        <p class="text-sm leading-relaxed text-sand-200/90">
+          {site.description}
+        </p>
+      </div>
+
+      <!-- ניווט -->
+      <div>
+        <h3 class="mb-3 font-serif text-lg text-sand-50">ניווט</h3>
+        <ul class="space-y-2 text-sm">
+          {
+            nav.map((item) => (
+              <li>
+                <a href={item.href} class="text-sand-200/90 transition-colors hover:text-gold-400">
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- יצירת קשר -->
+      <div>
+        <h3 class="mb-3 font-serif text-lg text-sand-50">בואו נדבר</h3>
+        <ul class="space-y-2 text-sm text-sand-200/90">
+          <li>
+            <a href={`tel:${site.phone}`} class="transition-colors hover:text-gold-400">
+              טלפון: {site.phone}
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${site.email}`} class="transition-colors hover:text-gold-400">
+              {site.email}
+            </a>
+          </li>
+          <li>
+            <a href={whatsappUrl()} target="_blank" rel="noopener" class="transition-colors hover:text-gold-400">
+              וואטסאפ →
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-sand-100/15 pt-6 text-center text-xs text-sand-200/70">
+      © {year} {site.name}. כל הזכויות שמורות.
+    </div>
+  </div>
+</footer>

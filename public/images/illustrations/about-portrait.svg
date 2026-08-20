@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6d3ad"/><stop offset="1" stop-color="#c97b4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bgp)"/>
+  <!-- דמות מדריך מופשטת -->
+  <circle cx="400" cy="380" r="130" fill="#8a4a30" opacity="0.85"/>
+  <path d="M180 1000 C 180 720 280 600 400 600 C 520 600 620 720 620 1000 Z" fill="#8a4a30" opacity="0.85"/>
+  <g opacity="0.5">
+    <rect x="70" y="80" width="30" height="30" transform="rotate(45 85 95)" fill="#f6f0e6"/>
+    <rect x="700" y="120" width="24" height="24" transform="rotate(45 712 132)" fill="#c2a059"/>
+  </g>
+  <text x="400" y="940" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="40" fill="#f6f0e6" opacity="0.9">דיוקן המדריך</text>
+</svg>

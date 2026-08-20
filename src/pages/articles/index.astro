@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import MosaicDivider from '../../components/MosaicDivider.astro';
+import { CATEGORIES } from '../../content/config';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+// אילו קטגוריות באמת קיימות בפוסטים
+const usedCategories = CATEGORIES.filter((c) =>
+  posts.some((p) => p.data.category === c)
+);
+---
+
+<BaseLayout
+  title="מאמרים"
+  description="מאגר מאמרים על קיסריה העתיקה — היסטוריה, אתרים ומבנים, ארכיאולוגיה, מדריך למבקר וסיפורים."
+>
+  <header class="container-page pt-16 pb-8 text-center">
+    <p class="mb-2 text-sm font-medium tracking-wide text-sea-500">מאגר הידע</p>
+    <h1 class="font-serif text-4xl text-ink-900 sm:text-5xl">מאמרים על קיסריה</h1>
+    <p class="mx-auto mt-4 max-w-xl text-ink-700">
+      כל מה שרציתם לדעת על העיר — מסודר לפי נושאים. סננו לפי תחום שמעניין אתכם.
+    </p>
+    <MosaicDivider class="mt-8" />
+  </header>
+
+  <!-- סינון קטגוריות (CSS בלבד, ללא JS) -->
+  <section class="container-page pb-16">
+    <div class="mb-10 flex flex-wrap justify-center gap-2.5" id="filters">
+      <button
+        type="button"
+        data-cat="all"
+        class="filter-btn is-active rounded-full border border-sand-300 px-4 py-1.5 text-sm font-medium text-ink-700 transition-colors"
+      >
+        הכל
+      </button>
+      {
+        usedCategories.map((cat) => (
+          <button
+            type="button"
+            data-cat={cat}
+            class="filter-btn rounded-full border border-sand-300 px-4 py-1.5 text-sm font-medium text-ink-700 transition-colors"
+          >
+            {cat}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-3" id="grid">
+      {
+        posts.map((post) => (
+          <div class="post-item" data-cat={post.data.category}>
+            <PostCard post={post} />
+          </div>
+        ))
+      }
+    </div>
+
+    {
+      posts.length === 0 && (
+        <p class="py-16 text-center text-ink-500">עדיין אין מאמרים — בקרוב יעלה תוכן חדש.</p>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .filter-btn.is-active {
+    background-color: var(--color-terracotta-500);
+    border-color: var(--color-terracotta-500);
+    color: var(--color-sand-50);
+  }
+  .filter-btn:not(.is-active):hover {
+    border-color: var(--color-terracotta-400);
+    color: var(--color-terracotta-500);
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const items = document.querySelectorAll<HTMLElement>('.post-item');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.cat;
+      buttons.forEach((b) => b.classList.toggle('is-active', b === btn));
+      items.forEach((item) => {
+        const show = cat === 'all' || item.dataset.cat === cat;
+        item.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>

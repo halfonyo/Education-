@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8c48f"/>
+      <stop offset="0.45" stop-color="#d99b63"/>
+      <stop offset="1" stop-color="#b65d3c"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f7d8c"/>
+      <stop offset="1" stop-color="#234a58"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <circle cx="1180" cy="300" r="90" fill="#f6e6c6" opacity="0.85"/>
+  <!-- ים -->
+  <rect y="620" width="1600" height="380" fill="url(#sea)"/>
+  <path d="M0 640 Q 200 620 400 640 T 800 640 T 1200 640 T 1600 640 V1000 H0 Z" fill="#2e5e6e" opacity="0.6"/>
+  <!-- קו חוף / חורבות מקדש רומי -->
+  <g fill="#8a4a30" opacity="0.92">
+    <rect x="240" y="430" width="30" height="200"/>
+    <rect x="330" y="430" width="30" height="200"/>
+    <rect x="420" y="430" width="30" height="200"/>
+    <rect x="510" y="430" width="30" height="200"/>
+    <rect x="210" y="405" width="360" height="34"/>
+    <path d="M205 405 L390 350 L575 405 Z"/>
+  </g>
+  <g fill="#9c4a2e" opacity="0.8">
+    <rect x="980" y="470" width="26" height="160"/>
+    <rect x="1050" y="470" width="26" height="160"/>
+    <rect x="1120" y="470" width="26" height="160"/>
+    <rect x="960" y="452" width="210" height="26"/>
+  </g>
+  <!-- אבני פסיפס בקדמת התמונה -->
+  <g opacity="0.5">
+    <rect x="60" y="900" width="26" height="26" transform="rotate(45 73 913)" fill="#c2a059"/>
+    <rect x="140" y="930" width="20" height="20" transform="rotate(45 150 940)" fill="#f6f0e6"/>
+    <rect x="1500" y="910" width="24" height="24" transform="rotate(45 1512 922)" fill="#c2a059"/>
+  </g>
+</svg>

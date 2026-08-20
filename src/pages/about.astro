@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import MosaicDivider from '../components/MosaicDivider.astro';
+import { site } from '../site.config';
+---
+
+<BaseLayout
+  title="אודות"
+  description={`הכירו את ${site.guideName} — מדריך המתמחה בקיסריה העתיקה, שמחבר בין מחקר, סיפור וחוויה בשטח.`}
+>
+  <section class="container-page pt-16 pb-8">
+    <div class="grid items-center gap-12 md:grid-cols-[1fr_1.3fr]">
+      <div class="overflow-hidden rounded-2xl shadow-[var(--shadow-warm)]">
+        <img
+          src="/images/illustrations/about-portrait.svg"
+          alt={`${site.guideName}, מדריך קיסריה`}
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <div>
+        <p class="mb-2 text-sm font-medium tracking-wide text-sea-500">אודות</p>
+        <h1 class="font-serif text-4xl text-ink-900 sm:text-5xl">שלום, אני {site.guideName}</h1>
+        <p class="mt-6 text-lg text-ink-700">
+          קיסריה מלווה אותי שנים — קודם כתחביב, אחר כך כתחום מחקר, והיום כמקצוע וכתשוקה.
+          לאורך הזמן גיליתי שהמקום הזה אף פעם לא מפסיק להפתיע: כל חפירה, כל מסמך היסטורי
+          וכל שיחה עם מבקרים חושפים עוד שכבה.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <MosaicDivider class="my-10" />
+
+  <section class="container-prose prose-body">
+    <h2>למה בכלל אתר?</h2>
+    <p>
+      אפשר לספר על קיסריה בשלוש דקות ליד השער — ואפשר להעמיק. את האתר הזה הקמתי כדי
+      לתת בית לסיפורים הארוכים: המאמרים, התגליות והפרטים הקטנים שאין להם מקום בסיור
+      עצמו אבל הם אלה שהופכים אבן לסיפור. הכתיבה כאן מבוססת על מקורות, אבל נכתבת בשפה
+      של בן אדם, לא של קטלוג.
+    </p>
+
+    <h2>איך אני מדריך</h2>
+    <p>
+      אני מאמין בהדרכה שמחברת בין דיוק היסטורי לחוויה. לא שיטפון של תאריכים, אלא
+      נרטיב שאפשר להיאחז בו: מי בנה, למה, ומה קרה אחר כך. אני אוהב לעצור ברגעים
+      הנכונים — האקוסטיקה בתיאטרון, קו הקשתות של אמת המים, השקט שמעל הנמל הטבוע — ולתת
+      למקום לדבר.
+    </p>
+
+    <h2>למי זה מתאים</h2>
+    <ul>
+      <li>משפחות שרוצות סיור מעניין גם למבוגרים וגם לילדים</li>
+      <li>קבוצות, חברות וארגונים שמחפשים חוויה תרבותית איכותית</li>
+      <li>חובבי היסטוריה וארכיאולוגיה שרוצים להעמיק</li>
+      <li>תיירים ואורחים שרוצים להכיר את אחד האתרים היפים בישראל</li>
+    </ul>
+  </section>
+
+  <CTASection title="בואו נטייל יחד" text="הדרך הכי טובה להכיר את קיסריה היא ללכת בה עם מי שמכיר אותה. אשמח לתכנן איתכם סיור." />
+</BaseLayout>

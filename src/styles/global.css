@@ -1,0 +1,191 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   מערכת עיצוב — ים-תיכוני חם | קיסריה העתיקה
+   ========================================================================== */
+
+@theme {
+  /* --- פלטת צבעים --- */
+  /* רקעים: גיר / חול */
+  --color-sand-50: #faf6ee;
+  --color-sand-100: #f6f0e6;
+  --color-sand-200: #ede3d1;
+  --color-sand-300: #e0d0b4;
+  --color-sand-400: #ceb891;
+
+  /* טרקוטה — הדגשה חמה */
+  --color-terracotta-400: #c97b4a;
+  --color-terracotta-500: #b65d3c;
+  --color-terracotta-600: #9c4a2e;
+
+  /* כחול-ים — הדגשה קרירה */
+  --color-sea-400: #3f7d8c;
+  --color-sea-500: #2e5e6e;
+  --color-sea-600: #234a58;
+  --color-sea-700: #1b3944;
+
+  /* זהב עתיק — הדגשות דקות */
+  --color-gold-400: #d0b473;
+  --color-gold-500: #c2a059;
+  --color-gold-600: #a5843f;
+
+  /* טקסט — פחם חם */
+  --color-ink-900: #2a231c;
+  --color-ink-700: #4a3f33;
+  --color-ink-500: #6b5e4e;
+
+  /* --- טיפוגרפיה --- */
+  --font-serif: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  --font-sans: 'Heebo', 'Assistant', system-ui, sans-serif;
+
+  /* --- רדיוסים וצללים --- */
+  --radius-card: 0.5rem;
+  --shadow-warm: 0 18px 40px -22px rgba(42, 35, 28, 0.45);
+}
+
+/* ==========================================================================
+   בסיס
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink-900);
+  background-color: var(--color-sand-100);
+  /* מרקם נייר/אבן עדין ברקע */
+  background-image:
+    radial-gradient(rgba(166, 132, 63, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--color-ink-900);
+}
+
+/* קישורי תוכן בתוך גוף מאמר */
+.prose-body a {
+  color: var(--color-terracotta-500);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.prose-body a:hover {
+  color: var(--color-terracotta-600);
+}
+
+/* ==========================================================================
+   רכיבים עיצוביים — סגנון מגזין ים-תיכוני
+   ========================================================================== */
+
+/* אות פתיחה מוגדלת (drop-cap) בפתיח מאמר */
+.dropcap::first-letter {
+  font-family: var(--font-serif);
+  float: right;
+  font-size: 3.6rem;
+  line-height: 0.82;
+  padding-inline-start: 0.02em;
+  padding-inline-end: 0.12em;
+  margin-top: 0.12em;
+  color: var(--color-terracotta-500);
+  font-weight: 700;
+}
+
+/* קו תחתון זהב דק לכותרות סעיף */
+.rule-gold {
+  position: relative;
+}
+.rule-gold::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  margin-top: 0.75rem;
+  background: linear-gradient(90deg, var(--color-gold-500), var(--color-terracotta-400));
+  border-radius: 2px;
+}
+
+/* מעטפת רוחב תוכן */
+.container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+.container-prose {
+  width: 100%;
+  max-width: 44rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* אנימציית הופעה עדינה */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* גוף מאמר — טיפוגרפיה של תוכן */
+.prose-body {
+  font-size: 1.125rem;
+  color: var(--color-ink-700);
+}
+.prose-body p { margin-block: 1.15em; }
+.prose-body h2 {
+  font-size: 1.75rem;
+  margin-top: 2.2em;
+  margin-bottom: 0.6em;
+  color: var(--color-ink-900);
+}
+.prose-body h3 {
+  font-size: 1.35rem;
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+  color: var(--color-sea-600);
+}
+.prose-body ul, .prose-body ol {
+  margin-block: 1.1em;
+  padding-inline-start: 1.4em;
+}
+.prose-body li { margin-block: 0.4em; }
+.prose-body ul li { list-style: none; position: relative; }
+.prose-body ul li::before {
+  content: '';
+  position: absolute;
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  inset-inline-start: -1.2em;
+  inset-block-start: 0.65em;
+  background: var(--color-gold-500);
+  transform: rotate(45deg);
+}
+.prose-body blockquote {
+  border-inline-start: 4px solid var(--color-terracotta-400);
+  background: var(--color-sand-50);
+  padding: 1rem 1.25rem;
+  margin-block: 1.5em;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-ink-900);
+}
+.prose-body img {
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-warm);
+  margin-block: 1.8em;
+}

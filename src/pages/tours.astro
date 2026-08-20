@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MosaicDivider from '../components/MosaicDivider.astro';
+import { site, whatsappUrl } from '../site.config';
+
+const tours = [
+  {
+    name: 'הסיור הקלאסי בקיסריה',
+    duration: 'כשעתיים וחצי',
+    audience: 'מתאים לכולם',
+    desc: 'המסלול המלא בין אתרי המורשת: התיאטרון, הארמון, ההיפודרום, הנמל והעיר הצלבנית. הסיפור השלם של העיר, מהורדוס ועד ימינו.',
+  },
+  {
+    name: 'קיסריה למשפחות',
+    duration: 'כשעתיים',
+    audience: 'הורים וילדים',
+    desc: 'סיור מותאם עם סיפורים, חידות ונקודות עצירה שמדברות גם לילדים — בלי לוותר על העומק למבוגרים.',
+  },
+  {
+    name: 'סיור מעמיק לחובבי היסטוריה',
+    duration: 'שלוש שעות ומעלה',
+    audience: 'קבוצות תוכן',
+    desc: 'צלילה לפרטים: ארכיאולוגיה, מקורות היסטוריים, שכבות בנייה וסיפורי התגליות הגדולות. לחובבי הז׳אנר האמיתיים.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'סיורים מודרכים בקיסריה',
+  provider: { '@type': 'Person', name: site.guideName },
+  areaServed: 'קיסריה, ישראל',
+  description: 'סיורים מודרכים באתר העתיקות של קיסריה בהתאמה אישית לקהלים שונים.',
+};
+---
+
+<BaseLayout
+  title="סיורים בקיסריה"
+  description="סיורים מודרכים בקיסריה העתיקה בהתאמה אישית — למשפחות, קבוצות וחובבי היסטוריה. תיאום ופרטים."
+  jsonLd={jsonLd}
+>
+  <section class="container-page pt-16 pb-8 text-center">
+    <p class="mb-2 text-sm font-medium tracking-wide text-sea-500">סיורים</p>
+    <h1 class="font-serif text-4xl text-ink-900 sm:text-5xl">חוויה שמתחילה באבן אחת</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-ink-700">
+      כל סיור נבנה סביב הקבוצה שלכם — הקצב, העניין והזמן. הנה כמה מסלולים נפוצים,
+      אבל תמיד אפשר להתאים.
+    </p>
+    <MosaicDivider class="mt-8" />
+  </section>
+
+  <section class="container-page pb-8">
+    <div class="grid gap-7 md:grid-cols-3">
+      {
+        tours.map((tour) => (
+          <div class="flex flex-col rounded-2xl border border-sand-300/70 bg-sand-50 p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-warm)]">
+            <h2 class="font-serif text-2xl text-ink-900">{tour.name}</h2>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-sea-500/10 px-3 py-1 text-sea-600">{tour.duration}</span>
+              <span class="rounded-full bg-gold-500/15 px-3 py-1 text-gold-600">{tour.audience}</span>
+            </div>
+            <p class="mt-4 flex-1 text-ink-700">{tour.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- מה כולל -->
+  <section class="container-page py-12">
+    <div class="rounded-2xl bg-sea-700 p-8 text-sand-100 md:p-12">
+      <h2 class="font-serif text-2xl text-sand-50">מה חשוב לדעת</h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2">
+        <div>
+          <h3 class="font-serif text-lg text-gold-400">התאמה אישית</h3>
+          <p class="mt-1 text-sm text-sand-200/90">כל סיור מותאם לגיל, לעניין ולזמן שיש לכם. אתם קובעים את הקצב.</p>
+        </div>
+        <div>
+          <h3 class="font-serif text-lg text-gold-400">קבוצות בכל גודל</h3>
+          <p class="mt-1 text-sm text-sand-200/90">מזוג משפחות ועד קבוצות גדולות, אירועי חברה וטיולי מוסדות.</p>
+        </div>
+        <div>
+          <h3 class="font-serif text-lg text-gold-400">לאורך כל השנה</h3>
+          <p class="mt-1 text-sm text-sand-200/90">קיסריה יפה בכל עונה. נמצא יחד את השעה והתאריך שמתאימים לכם.</p>
+        </div>
+        <div>
+          <h3 class="font-serif text-lg text-gold-400">סיפור, לא הרצאה</h3>
+          <p class="mt-1 text-sm text-sand-200/90">הדרכה חיה שמחברת בין ההיסטוריה למה שרואים בעיניים.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- קריאה לפעולה -->
+  <section class="container-prose py-12 text-center">
+    <h2 class="font-serif text-3xl text-ink-900">מוכנים לתאם?</h2>
+    <p class="mt-4 text-ink-700">ספרו לי מי אתם ומתי מתאים לכם, ואחזור אליכם עם הצעה מותאמת.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href={whatsappUrl()} target="_blank" rel="noopener" class="rounded-full bg-terracotta-500 px-8 py-3 font-medium text-sand-50 transition-colors hover:bg-terracotta-600">
+        תיאום בוואטסאפ
+      </a>
+      <a href="/contact" class="rounded-full border border-sand-300 px-8 py-3 font-medium text-ink-700 transition-colors hover:border-terracotta-400 hover:text-terracotta-500">
+        לכל דרכי הקשר
+      </a>
+    </div>
+  </section>
+</BaseLayout>

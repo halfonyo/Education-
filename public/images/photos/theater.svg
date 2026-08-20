@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6d3ad"/><stop offset="1" stop-color="#cfae7f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect y="560" width="1600" height="340" fill="#3f7d8c" opacity="0.55"/>
+  <!-- שורות מושבים חצי-מעגליות -->
+  <g fill="none" stroke="#a5843f" stroke-width="16" opacity="0.85">
+    <path d="M300 640 A500 500 0 0 1 1300 640"/>
+    <path d="M360 640 A440 440 0 0 1 1240 640"/>
+    <path d="M420 640 A380 380 0 0 1 1180 640"/>
+    <path d="M480 640 A320 320 0 0 1 1120 640"/>
+    <path d="M540 640 A260 260 0 0 1 1060 640"/>
+    <path d="M600 640 A200 200 0 0 1 1000 640"/>
+  </g>
+  <!-- במה -->
+  <rect x="640" y="640" width="320" height="70" fill="#8a4a30"/>
+  <g fill="#9c4a2e">
+    <rect x="670" y="560" width="20" height="90"/>
+    <rect x="760" y="560" width="20" height="90"/>
+    <rect x="850" y="560" width="20" height="90"/>
+    <rect x="910" y="560" width="20" height="90"/>
+  </g>
+  <text x="800" y="830" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="46" fill="#f6f0e6" opacity="0.9">התיאטרון הרומי</text>
+</svg>

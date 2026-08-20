@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MosaicDivider from '../components/MosaicDivider.astro';
+import { site, whatsappUrl } from '../site.config';
+---
+
+<BaseLayout
+  title="צור קשר"
+  description="דרכי יצירת קשר לתיאום סיור מודרך בקיסריה — טלפון, וואטסאפ, אימייל וטופס פנייה."
+>
+  <section class="container-page pt-16 pb-8 text-center">
+    <p class="mb-2 text-sm font-medium tracking-wide text-sea-500">יצירת קשר</p>
+    <h1 class="font-serif text-4xl text-ink-900 sm:text-5xl">בואו נדבר</h1>
+    <p class="mx-auto mt-4 max-w-xl text-ink-700">
+      מתעניינים בסיור, יש לכם שאלה, או סתם רוצים להתייעץ? אני כאן.
+    </p>
+    <MosaicDivider class="mt-8" />
+  </section>
+
+  <section class="container-page pb-16">
+    <div class="grid gap-10 md:grid-cols-2">
+      <!-- דרכי קשר ישירות -->
+      <div class="flex flex-col gap-4">
+        <a href={whatsappUrl()} target="_blank" rel="noopener" class="group flex items-center gap-4 rounded-xl border border-sand-300/70 bg-sand-50 p-5 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-warm)]">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-terracotta-500/10 text-terracotta-500">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>
+            <span class="block font-medium text-ink-900 group-hover:text-terracotta-500">וואטסאפ</span>
+            <span class="block text-sm text-ink-500">הדרך המהירה ביותר להגיע אליי</span>
+          </span>
+        </a>
+
+        <a href={`tel:${site.phone}`} class="group flex items-center gap-4 rounded-xl border border-sand-300/70 bg-sand-50 p-5 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-warm)]">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-sea-500/10 text-sea-500">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 8.3 6.7 15 15 15v-3.5l-4-1.5-2 2a12 12 0 0 1-6-6l2-2L11.5 5H4Z" stroke-linejoin="round"/></svg>
+          </span>
+          <span>
+            <span class="block font-medium text-ink-900 group-hover:text-sea-600">טלפון</span>
+            <span class="block text-sm text-ink-500" dir="ltr">{site.phone}</span>
+          </span>
+        </a>
+
+        <a href={`mailto:${site.email}`} class="group flex items-center gap-4 rounded-xl border border-sand-300/70 bg-sand-50 p-5 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-warm)]">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500/15 text-gold-600">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>
+            <span class="block font-medium text-ink-900 group-hover:text-gold-600">אימייל</span>
+            <span class="block text-sm text-ink-500" dir="ltr">{site.email}</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- טופס פנייה -->
+      <form
+        class="rounded-2xl border border-sand-300/70 bg-sand-50 p-7"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <p class="hidden">
+          <label>אל תמלאו: <input name="bot-field" /></label>
+        </p>
+        <div class="grid gap-4">
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-ink-700">שם מלא</span>
+            <input type="text" name="name" required class="w-full rounded-lg border border-sand-300 bg-white px-3.5 py-2.5 text-ink-900 outline-none focus:border-terracotta-400 focus:ring-2 focus:ring-terracotta-400/20" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-ink-700">טלפון</span>
+            <input type="tel" name="phone" dir="ltr" class="w-full rounded-lg border border-sand-300 bg-white px-3.5 py-2.5 text-right text-ink-900 outline-none focus:border-terracotta-400 focus:ring-2 focus:ring-terracotta-400/20" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-ink-700">אימייל</span>
+            <input type="email" name="email" dir="ltr" class="w-full rounded-lg border border-sand-300 bg-white px-3.5 py-2.5 text-right text-ink-900 outline-none focus:border-terracotta-400 focus:ring-2 focus:ring-terracotta-400/20" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-ink-700">כמה מילים על מה שאתם מחפשים</span>
+            <textarea name="message" rows="4" class="w-full rounded-lg border border-sand-300 bg-white px-3.5 py-2.5 text-ink-900 outline-none focus:border-terracotta-400 focus:ring-2 focus:ring-terracotta-400/20"></textarea>
+          </label>
+          <button type="submit" class="mt-2 rounded-full bg-terracotta-500 px-7 py-3 font-medium text-sand-50 transition-colors hover:bg-terracotta-600">
+            שליחה
+          </button>
+          <p class="text-xs text-ink-500">
+            הטופס מוכן לעבודה עם Netlify Forms. אם האתר יתארח במקום אחר — אחליף אותו בקלות לשירות טפסים מתאים.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
