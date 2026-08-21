@@ -3,7 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import MosaicDivider from '../components/MosaicDivider.astro';
 import { site, whatsappUrl, url } from '../site.config';
 
-const tours = [
+interface Tour {
+  name: string;
+  duration: string;
+  audience: string;
+  desc: string;
+  link?: string;
+  linkLabel?: string;
+}
+
+const tours: Tour[] = [
   {
     name: 'סיור זוגי בקיסריה',
     duration: 'לזוגות',
@@ -18,9 +27,11 @@ const tours = [
   },
   {
     name: 'סיור סליחות בקיסריה',
-    duration: 'עונתי',
+    duration: 'כשעתיים · עונתי',
     audience: 'הימים הנוראים',
-    desc: 'סיור מיוחד לעונת הסליחות. דרך סיפורה של קיסריה נתחבר לאווירת הימים הנוראים, ונלמד על מהותה של הסליחה והתשובה. פעיל רק בעונה המתאימה.',
+    desc: 'סליחות אחרות לגמרי — לא בירושלים ולא בצפת, אלא על חוף הים בקיסריה, מול השקיעה. מחוף הקשתות ניכנס אל העיר העתיקה, ניפגש עם ההתנגשות שבין רומא לירושלים, ונחתום בתקיעת שופר בגן הלאומי. מסע של זיכרון, תשובה והתעוררות לקראת הימים הנוראים. פעיל בעונת הסליחות בלבד.',
+    link: '/articles/selichot-tour',
+    linkLabel: 'קראו עוד על הסיור',
   },
 ];
 
@@ -60,6 +71,14 @@ const jsonLd = {
               <span class="rounded-full bg-gold-500/15 px-3 py-1 text-gold-600">{tour.audience}</span>
             </div>
             <p class="mt-4 flex-1 text-ink-700">{tour.desc}</p>
+            {tour.link && (
+              <a
+                href={url(tour.link)}
+                class="mt-4 inline-flex w-fit items-center gap-1 font-medium text-terracotta-500 transition-colors hover:text-terracotta-600"
+              >
+                {tour.linkLabel} ←
+              </a>
+            )}
           </div>
         ))
       }
