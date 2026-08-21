@@ -22,7 +22,11 @@ const props = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    <link rel="icon" type="image/png" sizes="32x32" href={url('/favicon-32.png')} />
+    <link rel="icon" type="image/png" sizes="16x16" href={url('/favicon-16.png')} />
+    <link rel="apple-touch-icon" sizes="180x180" href={url('/apple-touch-icon.png')} />
+    <link rel="manifest" href={url('/site.webmanifest')} />
+    <meta name="theme-color" content="#2e5e6e" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- גופנים עבריים: Frank Ruhl Libre (סריף) + Heebo (סאנס) -->

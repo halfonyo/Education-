@@ -61,12 +61,13 @@ const isActive = (href: string) =>
       <span class="font-serif text-xl font-bold text-ink-900 group-hover:text-terracotta-500 transition-colors">
         {site.name}
       </span>
-      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <circle cx="17" cy="17" r="16" stroke="var(--color-terracotta-500)" stroke-width="1.5" />
-        <path d="M9 22V13l8-5 8 5v9" stroke="var(--color-sea-500)" stroke-width="1.5" stroke-linejoin="round" />
-        <path d="M13 22v-6M17 22v-6M21 22v-6" stroke="var(--color-sea-500)" stroke-width="1.5" />
-        <circle cx="17" cy="17" r="2" fill="var(--color-gold-500)" />
-      </svg>
+      <img
+        src={url('/images/logo.png')}
+        width="40"
+        height="40"
+        alt={`הלוגו של ${site.name}`}
+        class="h-10 w-10"
+      />
     </a>
   </div>
 </header>
