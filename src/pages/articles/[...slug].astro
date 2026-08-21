@@ -22,12 +22,6 @@ const { Content } = await post.render();
 const { title, description, category, heroImage, heroImageAlt, publishDate, tags, readingTime } =
   post.data;
 
-const dateLabel = new Intl.DateTimeFormat('he-IL', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-}).format(publishDate);
-
 // פוסטים קשורים — מאותה קטגוריה, אחרת אחרונים
 const all = (await getCollection('posts', ({ data }) => !data.draft)).filter(
   (p) => p.slug !== post.slug
@@ -76,8 +70,6 @@ const jsonLd = {
       </h1>
       <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-sand-100/90">
         <span>מאת {site.guideName}</span>
-        <span aria-hidden="true">·</span>
-        <time datetime={publishDate.toISOString()}>{dateLabel}</time>
         {readingTime && <><span aria-hidden="true">·</span><span>{readingTime} דק׳ קריאה</span></>}
       </div>
     </div>
