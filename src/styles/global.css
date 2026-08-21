@@ -64,14 +64,17 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, .font-serif {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  /* Bellefair קיים במשקל אחד בלבד — מונע bold מסונתז (מכוער) על כותרות */
-  font-synthesis: none;
-  letter-spacing: 0;
-  line-height: 1.2;
-  color: var(--color-ink-900);
+/* @layer base — כדי שמחלקות צבע של Tailwind (text-*) יוכלו לגבור על צבע ברירת המחדל של הכותרות */
+@layer base {
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    /* Bellefair קיים במשקל אחד בלבד — מונע bold מסונתז (מכוער) על כותרות */
+    font-synthesis: none;
+    letter-spacing: 0;
+    line-height: 1.2;
+    color: var(--color-ink-900);
+  }
 }
 
 /* קישורי תוכן בתוך גוף מאמר */
@@ -88,19 +91,6 @@ h1, h2, h3, h4, .font-serif {
 /* ==========================================================================
    רכיבים עיצוביים — סגנון מגזין ים-תיכוני
    ========================================================================== */
-
-/* אות פתיחה מוגדלת (drop-cap) בפתיח מאמר */
-.dropcap::first-letter {
-  font-family: var(--font-serif);
-  float: right;
-  font-size: 3.6rem;
-  line-height: 0.82;
-  padding-inline-start: 0.02em;
-  padding-inline-end: 0.12em;
-  margin-top: 0.12em;
-  color: var(--color-terracotta-500);
-  font-weight: 700;
-}
 
 /* קו תחתון זהב דק לכותרות סעיף */
 .rule-gold {
