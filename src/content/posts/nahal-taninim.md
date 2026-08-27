@@ -3,7 +3,7 @@ title: 'התנין שנעלם והסכר ששרד'
 description: 'מצפון לקיסריה זורם נחל ששמו מנציח חיה שנכחדה, ובתוכו סכר רומי אדיר שהפך מים פראיים לכוח. סיפור על מים מתוקים בחוף, ועל מה ששם שומר.'
 publishDate: 2026-07-27
 category: 'אתרים ומבנים'
-heroImage: '/images/photos/aqueduct.svg'
+heroImage: '/images/photos/taninim-real.webp'
 heroImageAlt: 'שרידי הסכר הרומי בנחל תנינים, מצפון לקיסריה'
 tags: ['נחל תנינים', 'הנדסה רומית', 'טבע', 'מים']
 readingTime: 4
