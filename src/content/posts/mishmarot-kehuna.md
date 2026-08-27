@@ -3,8 +3,8 @@ title: 'הכתובת שזוכרת סדר שנקטע'
 description: 'שברי שיש שנמצאו בבית הכנסת העתיק של קיסריה נושאים את רשימת עשרים וארבע משמרות הכהונה, זיכרון חרוט של סדר עבודה שנקטע עם חורבן המקדש.'
 publishDate: 2026-07-06
 category: 'ארכיאולוגיה'
-heroImage: '/images/photos/harbor.svg'
-heroImageAlt: 'שרידי קיסריה, שבה נמצאה כתובת משמרות הכהונה'
+heroImage: '/images/photos/mishmarot-real.webp'
+heroImageAlt: 'רצפת פסיפס עם כתובת יוונית מבית הכנסת העתיק בקיסריה'
 tags: ['משמרות כהונה', 'בית הכנסת', 'ארכיאולוגיה', 'חורבן']
 readingTime: 4
 featured: false
