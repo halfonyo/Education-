@@ -3,8 +3,8 @@ title: 'החול והים, ומי שכתבה עליהם'
 description: 'על חוף קיסריה, בקיבוץ שדות ים, כתבה חנה סנש את "הליכה לקיסריה". שיר על חול וים שלא ייגמרו לעולם, מאת מי שחייה נגמרו צעירים כל כך.'
 publishDate: 2026-08-18
 category: 'סיפורים ואגדות'
-heroImage: '/images/photos/harbor.svg'
-heroImageAlt: 'החול והים בקיסריה, ליד קיבוץ שדות ים'
+heroImage: '/images/photos/hanna-real.webp'
+heroImageAlt: 'שקיעה מעל הים בקיסריה, מול שרידי הנמל'
 tags: ['חנה סנש', 'שדות ים', 'הליכה לקיסריה', 'תקומה']
 readingTime: 4
 featured: false
