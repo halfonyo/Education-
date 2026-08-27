@@ -3,8 +3,8 @@ title: 'חרבה קיסרי וישבה ירושלים'
 description: 'העיר שהורדוס בנה לכבוד הקיסר הפכה בפי חכמים לניגודה של ירושלים, ודווקא בה, בבירת הנציב הרומי, ישבו רבי אבהו וחכמי קיסריה ולמדו תורה.'
 publishDate: 2026-08-10
 category: 'היסטוריה'
-heroImage: '/images/photos/harbor.svg'
-heroImageAlt: 'שרידי קיסריה על חוף הים, העיר שחז"ל העמידו מול ירושלים'
+heroImage: '/images/photos/kisari-real.webp'
+heroImageAlt: 'כותרת עמוד קורינתית מגולפת מקיסריה העתיקה'
 tags: ['חז"ל', 'רבי אבהו', 'ירושלים', 'התקופה הרומית']
 readingTime: 4
 featured: false

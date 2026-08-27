@@ -3,8 +3,8 @@ title: 'האבן שהיא ים שהתקשה'
 description: 'קיסריה בנויה בעיקר מכורכר, אבן חול מקומית שנוצרה מחולות ים קדומים שהתאבנו. הסיפור של האבן הזאת הוא הסיפור של איך נבנתה עיר מן הקרקע שתחתיה.'
 publishDate: 2026-08-16
 category: 'אתרים ומבנים'
-heroImage: '/images/photos/kurkar-real.webp'
-heroImageAlt: 'כותרת עמוד קורינתית מגולפת מאבן מקומית בקיסריה'
+heroImage: '/images/photos/theater.svg'
+heroImageAlt: 'מבני כורכר בקיסריה, אבן החול המקומית'
 tags: ['כורכר', 'גיאולוגיה', 'בנייה', 'הורדוס']
 readingTime: 4
 featured: false

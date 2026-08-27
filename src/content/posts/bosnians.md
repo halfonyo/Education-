@@ -3,8 +3,8 @@ title: 'המסגד שנשאר על החוף'
 description: 'בשלהי המאה התשע עשרה יישבו העות׳מאנים בחורבות הצלבניות של קיסריה פליטים מוסלמים מבוסניה. הם בנו כפר ושני מסגדים, ואחד מהם עומד עד היום.'
 publishDate: 2026-08-06
 category: 'היסטוריה'
-heroImage: '/images/photos/harbor.svg'
-heroImageAlt: 'המסגד העות׳מאני בתוך העיר העתיקה של קיסריה'
+heroImage: '/images/photos/mosque-real.webp'
+heroImageAlt: 'צריח המסגד הבוסני בתוך העיר העתיקה של קיסריה'
 tags: ['בוסנים', 'התקופה העות׳מאנית', 'מסגד', 'פליטים']
 readingTime: 4
 featured: false

@@ -3,8 +3,8 @@ title: 'הניצוץ שהצית'
 description: 'המרד הגדול נגד רומא פרץ מתוך סכסוך מקומי בקיסריה, וכעבור שלוש שנים הוכרז בה עצמה המצביא שדיכא אותו לקיסר. עיר אחת, תחילת המלחמה וסופה.'
 publishDate: 2026-07-20
 category: 'היסטוריה'
-heroImage: '/images/photos/theater.svg'
-heroImageAlt: 'שרידים רומיים בקיסריה, העיר שבה ניצת המרד הגדול'
+heroImage: '/images/photos/roman-statue.webp'
+heroImageAlt: 'פסל רומי עטוי גלימה בשרידי קיסריה, ליד בריכת מים'
 tags: ['המרד הגדול', 'יוסף בן מתתיהו', 'התקופה הרומית', 'חורבן']
 readingTime: 4
 featured: false
