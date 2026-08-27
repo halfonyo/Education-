@@ -3,8 +3,8 @@ title: 'העיר שהצטמצמה'
 description: 'החומות והחפיר שרואים היום בקיסריה הם צלבניים, והם מקיפים שטח קטן בתוך העיר הענקית של הורדוס. דווקא הצמצום הזה מספר את סיפורה של קיסריה.'
 publishDate: 2026-07-13
 category: 'היסטוריה'
-heroImage: '/images/photos/harbor.svg'
-heroImageAlt: 'החומות הצלבניות והחפיר בקיסריה'
+heroImage: '/images/photos/crusader-real.webp'
+heroImageAlt: 'אולם צלבני מקומר עם קשתות גותיות מחודדות בקיסריה'
 tags: ['הצלבנים', 'לואי התשיעי', 'ביברס', 'חומות']
 readingTime: 4
 featured: false
