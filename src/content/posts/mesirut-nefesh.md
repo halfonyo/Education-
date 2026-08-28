@@ -3,8 +3,8 @@ title: 'יהודי ירושלים יורדים לקיסריה'
 description: 'כשהנציב הרומי הכניס לירושלים את דגלי הקיסר, ירדו יהודים לקיסריה, השתטחו לפני החיילים וחשפו את צווארם, מוכנים למות ולא לקבל את הסמל.'
 publishDate: 2026-08-13
 category: 'סיפורים ואגדות'
-heroImage: '/images/photos/theater.svg'
-heroImageAlt: 'שרידי מבנה רומי בקיסריה, מושב הנציב שאליו ירדו היהודים'
+heroImage: '/images/photos/mesirut-real.webp'
+heroImageAlt: 'שרידי ההיפודרום הרומי בקיסריה מול הים, מושב הנציב'
 tags: ['מסירות נפש', 'התקופה הרומית', 'קידוש השם']
 readingTime: 4
 featured: false
