@@ -3,8 +3,8 @@ title: 'שם שנפתח כמו בצל'
 description: 'מגדל שרשון, קיסריה, קיסרין, קייסריה. כל מי ששלט כאן הותיר את חותמו בשם המקום. מסע קצר בשמה של עיר אחת, שכל שכבה בו מספרת מי היה כאן.'
 publishDate: 2026-08-03
 category: 'סיפורים ואגדות'
-heroImage: '/images/photos/harbor.svg'
-heroImageAlt: 'קיסריה על חוף הים, עיר שנשאה שמות רבים'
+heroImage: '/images/photos/shem-real.webp'
+heroImageAlt: 'שלט דרך חום המורה לקיסריה, בעברית ובאנגלית'
 tags: ['אטימולוגיה', 'הורדוס', 'שמות', 'היסטוריה']
 readingTime: 4
 featured: false
