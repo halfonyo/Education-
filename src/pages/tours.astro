@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MosaicDivider from '../components/MosaicDivider.astro';
-import { site, whatsappUrl, url } from '../site.config';
+import { site, url } from '../site.config';
 
 interface Tour {
   name: string;
@@ -115,10 +115,7 @@ const jsonLd = {
     <h2 class="font-serif text-3xl text-ink-900">מוכנים לתאם?</h2>
     <p class="mt-4 text-ink-700">ספרו לי מי אתם ומתי מתאים לכם, ואחזור אליכם עם הצעה מותאמת.</p>
     <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <a href={whatsappUrl()} target="_blank" rel="noopener" class="rounded-full bg-terracotta-500 px-8 py-3 font-medium text-sand-50 transition-colors hover:bg-terracotta-600">
-        תיאום בוואטסאפ
-      </a>
-      <a href={url('/contact')} class="rounded-full border border-sand-300 px-8 py-3 font-medium text-ink-700 transition-colors hover:border-terracotta-400 hover:text-terracotta-500">
+      <a href={url('/contact')} class="rounded-full bg-terracotta-500 px-8 py-3 font-medium text-sand-50 transition-colors hover:bg-terracotta-600">
         לכל דרכי הקשר
       </a>
     </div>

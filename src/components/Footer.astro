@@ -5,36 +5,28 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="mt-24 bg-sea-700 text-sand-100">
-  <div class="container-page py-14">
+  <div class="container-page py-14 text-center">
     <MosaicDivider class="mb-10 opacity-80" />
-    <div class="grid gap-10 md:grid-cols-2">
-      <!-- על האתר -->
-      <div>
-        <h3 class="mb-3 font-serif text-xl text-gold-400">{site.name}</h3>
-        <p class="max-w-md text-sm leading-relaxed text-sand-100/90">
-          {site.description}
-        </p>
-      </div>
 
-      <!-- יצירת קשר -->
-      <div class="md:text-start">
-        <h3 class="mb-3 font-serif text-lg text-gold-400">בואו נדבר</h3>
-        <ul class="space-y-2 text-sm text-sand-100/90">
-          <li>
-            <a href={`tel:${site.phone}`} class="transition-colors hover:text-gold-400">
-              טלפון: <span dir="ltr">{site.phone}</span>
-            </a>
-          </li>
-          <li>
-            <a href={`mailto:${site.email}`} class="transition-colors hover:text-gold-400">
-              {site.email}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <p class="mx-auto max-w-2xl font-serif text-lg leading-relaxed text-sand-100/95">
+      ד"ר יוחאי חלפון, מדריך שאוהב ונושם את האוויר של קיסריה כבר יותר מעשרים שנה,
+      ומתרגש מחדש בכל פעם לגלות איך ההיסטוריה של עם ישראל חוזרת ומתעוררת לתחייה.
+    </p>
 
-    <div class="mt-12 border-t border-sand-100/15 pt-6 text-center text-xs text-sand-100/70">
+    <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-sand-100/90">
+      <li>
+        <a href={`tel:${site.phone}`} class="transition-colors hover:text-gold-400">
+          טלפון: <span dir="ltr">{site.phone}</span>
+        </a>
+      </li>
+      <li>
+        <a href={`mailto:${site.email}`} class="transition-colors hover:text-gold-400">
+          {site.email}
+        </a>
+      </li>
+    </ul>
+
+    <div class="mt-10 border-t border-sand-100/15 pt-6 text-xs text-sand-100/70">
       © {year} {site.name}. כל הזכויות שמורות.
     </div>
   </div>
