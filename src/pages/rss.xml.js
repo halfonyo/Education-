@@ -9,7 +9,7 @@ export async function GET(context) {
   );
 
   return rss({
-    title: `${site.name} — מאמרים על קיסריה`,
+    title: `${site.name}, מאמרים על קיסריה`,
     description: site.description,
     site: context.site,
     items: posts.map((post) => ({

@@ -19,7 +19,7 @@ const {
   jsonLd,
 } = Astro.props;
 
-const fullTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name}, ${site.tagline}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(url(image), Astro.site);
 ---
