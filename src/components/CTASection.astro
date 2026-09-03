@@ -19,12 +19,11 @@ const {
     variant === 'full' ? 'my-4' : 'my-12 rounded-2xl',
   ]}
 >
-  <div class="bg-terracotta-500">
-    <div class="container-page relative py-14 text-center">
-      <!-- קישוט פינתי בסגנון אבן -->
-      <div class="pointer-events-none absolute inset-0 opacity-[0.08]" aria-hidden="true"
-           style="background-image: radial-gradient(circle, #fff 1.5px, transparent 1.5px); background-size: 26px 26px;">
-      </div>
+  <div
+    class="relative bg-terracotta-600 bg-cover bg-center bg-no-repeat"
+    style={`background-image: linear-gradient(180deg, rgba(159,74,50,0.82) 0%, rgba(159,74,50,0.70) 45%, rgba(120,52,32,0.86) 100%), url('${url('/images/photos/aqueduct-real.webp')}');`}
+  >
+    <div class="container-page relative py-16 text-center">
       <h2 class="relative mx-auto max-w-2xl font-serif text-3xl font-bold sm:text-4xl">
         {title}
       </h2>
