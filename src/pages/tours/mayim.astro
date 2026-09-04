@@ -11,15 +11,6 @@ const heroImage = '/images/photos/mayim-tour.webp';
 const heroImageAlt =
   'שרידי אמת המים של קיסריה, שורת קשתות אבן זהובה על רקע החוף';
 
-const details = [
-  { label: 'נקודת התחלה', value: 'פארק שוני (פארק ז׳בוטינסקי), ליד בנימינה' },
-  { label: 'נקודת סיום', value: 'הגן הלאומי קיסריה' },
-  { label: 'אופי הסיור', value: 'יום שלם, נסיעה ברכבים פרטיים בין האתרים' },
-  { label: 'דרגת קושי', value: 'קל, עם קטע הליכה רטובה בנקבת מי קדם' },
-  { label: 'ציוד מומלץ', value: 'מים בשפע, כובע, פנס ונעליים להליכה במים, ומצלמה' },
-  { label: 'כניסה בתשלום', value: 'פארק אלונה (מי קדם), שמורת נחל תנינים, והגן הלאומי קיסריה' },
-];
-
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'TouristTrip',
@@ -59,21 +50,6 @@ const jsonLd = {
 
   <!-- גוף הסיור -->
   <article class="container-prose py-14">
-    <!-- פרטים מעשיים -->
-    <div class="mb-10 rounded-2xl border border-sand-300/70 bg-sand-50 p-6 sm:p-8">
-      <h2 class="mb-4 font-serif text-xl text-ink-900">פרטים מעשיים</h2>
-      <dl class="grid gap-x-8 gap-y-3 sm:grid-cols-2">
-        {
-          details.map((d) => (
-            <div class="flex flex-col">
-              <dt class="text-xs font-medium tracking-wide text-sea-600">{d.label}</dt>
-              <dd class="text-ink-800">{d.value}</dd>
-            </div>
-          ))
-        }
-      </dl>
-    </div>
-
     <div class="prose-body">
       <p>
         קיסריה היא אחת הערים המרשימות שקמו כאן אי פעם, ויש בה בעיה אחת שאי אפשר
