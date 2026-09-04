@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import MosaicDivider from '../../components/MosaicDivider.astro';
+import { site, url } from '../../site.config';
+
+const title = 'בעקבות המים לקיסריה';
+const description =
+  'מסלול יום שלם בעקבות מערכת המים העתיקה של קיסריה: ממעיינות הכרמל בשוני, דרך נקבת מי קדם, אמת המים בבית חנניה והסכר בנחל תנינים, ועד הקשתות שעל החוף והעיר עצמה.';
+const heroImage = '/images/photos/mayim-tour.webp';
+const heroImageAlt =
+  'שרידי אמת המים של קיסריה, שורת קשתות אבן זהובה על רקע החוף';
+
+const details = [
+  { label: 'נקודת התחלה', value: 'פארק שוני (פארק ז׳בוטינסקי), ליד בנימינה' },
+  { label: 'נקודת סיום', value: 'הגן הלאומי קיסריה' },
+  { label: 'אופי הסיור', value: 'יום שלם, נסיעה ברכבים פרטיים בין האתרים' },
+  { label: 'דרגת קושי', value: 'קל, עם קטע הליכה רטובה בנקבת מי קדם' },
+  { label: 'ציוד מומלץ', value: 'מים בשפע, כובע, פנס ונעליים להליכה במים, ומצלמה' },
+  { label: 'כניסה בתשלום', value: 'פארק אלונה (מי קדם), שמורת נחל תנינים, והגן הלאומי קיסריה' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristTrip',
+  name: title,
+  description,
+  image: new URL(url(heroImage), Astro.site).href,
+  provider: { '@type': 'Person', name: site.guideName },
+  touristType: 'תיירות היסטורית וארכיאולוגית',
+};
+---
+
+<BaseLayout title={title} description={description} image={heroImage} jsonLd={jsonLd}>
+  <!-- כותרת עם תמונת רקע -->
+  <header class="relative isolate overflow-hidden">
+    <img src={url(heroImage)} alt={heroImageAlt} class="absolute inset-0 -z-10 h-full w-full object-cover" fetchpriority="high" />
+    <div
+      class="absolute inset-0 -z-10"
+      style="background: linear-gradient(180deg, rgba(27,57,68,0.12) 0%, rgba(27,57,68,0.18) 38%, rgba(27,57,68,0.60) 72%, rgba(27,57,68,0.93) 100%);"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="container-prose flex min-h-[52vh] flex-col justify-end pb-12 pt-28 text-sand-50" style="text-shadow: 0 2px 16px rgba(11,26,32,0.6);">
+      <a href={url('/tours')} class="mb-4 inline-flex w-fit items-center gap-1.5 text-sm text-sand-100/90 hover:text-gold-400">
+        חזרה לכל הסיורים
+      </a>
+      <span class="mb-3 inline-flex w-fit rounded-full bg-sand-50/15 px-3 py-1 text-xs font-medium backdrop-blur-sm" style="text-shadow: none;">
+        סיור מודרך
+      </span>
+      <h1 class="font-serif text-4xl leading-tight text-sand-50 sm:text-5xl md:text-6xl">
+        {title}
+      </h1>
+      <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-sand-100/90">
+        <span>מאת {site.guideName}</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- גוף הסיור -->
+  <article class="container-prose py-14">
+    <!-- פרטים מעשיים -->
+    <div class="mb-10 rounded-2xl border border-sand-300/70 bg-sand-50 p-6 sm:p-8">
+      <h2 class="mb-4 font-serif text-xl text-ink-900">פרטים מעשיים</h2>
+      <dl class="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+        {
+          details.map((d) => (
+            <div class="flex flex-col">
+              <dt class="text-xs font-medium tracking-wide text-sea-600">{d.label}</dt>
+              <dd class="text-ink-800">{d.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <div class="prose-body">
+      <p>
+        קיסריה היא אחת הערים המרשימות שקמו כאן אי פעם, ויש בה בעיה אחת שאי אפשר
+        להסתיר: היא נבנתה על חוף חולי, בלי נהר ובלי מעיין רציני בקרבת מקום. עיר עם
+        מרחצאות, מזרקות ואלפי תושבים צמאה לכמויות אדירות של מים מתוקים שפשוט לא היו
+        שם. הסיור הזה הוא הדרך שבה פתרו את הבעיה. נצא בעקבות המים, מהמעיין שממנו יצאו
+        ועד הברז שאליו הגיעו, ונגלה שכדי להשקות עיר אחת גייסו כאן נוף שלם.
+      </p>
+
+      <h2>מהמעיין אל הנקבה</h2>
+      <p>
+        נפתח את היום בפארק שוני, פארק ז׳בוטינסקי שלמרגלות הכרמל ליד בנימינה, במקום
+        שממנו יצאה אמת המים הראשונה של קיסריה. מכאן שלח הורדוס את התעלה הראשונה, זו
+        שהחוקרים מכנים תעלה א׳, בשיפוע של כשישה עשר סנטימטרים בלבד לכל קילומטר, לאורך
+        עשרות קילומטרים אל העיר. נעצור רגע על המספר הזה, כי דיוק כזה, בלי מכשיר מדידה
+        מודרני אחד, הוא כבר סיפור בפני עצמו.
+      </p>
+      <p>
+        משם ניסע אל פארק אלונה, אל אתר מי קדם. כאן נחליף נעליים, נדליק פנס, וניכנס
+        להלך בתוך נקבת מים עתיקה שהמים עדיין זורמים בה סביב הקרסוליים. הנקבה הזאת אינה
+        גימיק לילדים, היא חלק אמיתי מן המערכת: מנהרה חצובה שהובילה את מי מעיינות
+        הצבארים כשישה קילומטרים לכיוון קיסריה. מי שמעולם לא חשב שיטייל בתוך צינור מים
+        בן אלפיים שנה, מוזמן.
+      </p>
+
+      <h2>הכתובת של הלגיון והסכר שיצר אגם</h2>
+      <p>
+        נמשיך אל שרידי אמת המים שליד בית חנניה. כאן, על אבני האמה, נבחין בכתובות
+        שהשאירו בוני האמה, חיילי הלגיונות הרומיים ששהו בארץ. רובן מימי הקיסר אדריאנוס,
+        כלומר מזמן מרד בר כוכבא, וכתובת יוונית אחת אף מתעדת תיקון בשנת 385 לספירה.
+        הרומאים לא הסתפקו בבנייה, הם חתמו עליה.
+      </p>
+      <p>
+        משם נעלה צפונה אל שמורת נחל תנינים. הנחל הזה, ששמו מנציח את תנין היאור שחי בו
+        עד שנכחד בארץ בתחילת המאה העשרים, מחזיק סוד הנדסי. כשגדלה קיסריה עד שגם מי
+        הכרמל לא הספיקו לה, בנו כאן המהנדסים סכר שחסם את הנחל ויצר אגם מלאכותי בשטח של
+        כחמשת אלפים דונם. מן האגם הזה זרמו המים באמה הנמוכה, שיכלה להעביר עד אלפיים
+        וחמש מאות מטר מעוקב בשעה, פי כמה מן התעלה של הורדוס.
+      </p>
+
+      <h2>הקשתות, והמים שהגיעו סוף סוף</h2>
+      <p>
+        עכשיו, כשאנחנו כבר יודעים מאיפה הכול התחיל, נגיע אל התמונה המפורסמת: חוף
+        האקוודוקט. שורת הקשתות הזהובה שרצה לאורך הים אינה אמה אחת אלא שתיים, האמה
+        הגבוהה של הורדוס והלגיונות לצד האמה הנמוכה המאוחרת יותר, זו על גב זו. זהו
+        הפרק הגלוי של מפעל שנמשך כאלף ושלוש מאות שנה, מהורדוס ועד הממלוכים. נחתום בגן
+        הלאומי קיסריה עצמו, שם נחפש את הצד השני של הסיפור, מתקני המים שבתוך העיר.
+      </p>
+      <p>
+        וכאן שאלה קטנה שנשאיר פתוחה עד החוף: כל הדרך הארוכה הזאת הביאה מים מתוקים, או
+        שלא? נעמוד מול הקשתות ונבין שראינו היום נוף שלם שגויס למשימה אחת. מלך שהביא
+        מים מן ההר, לגיונות שחתמו את שמם באבן, מהנדסים שחסמו נחל ובנו אגם, וכל זה כדי
+        שאפשר יהיה לפתוח ברז בעיר שהים לא רצה בה. זה אולי הדבר הרומי ביותר שיש: לא
+        לקבל את מה שהטבע נותן, אלא להביא את מה שחסר, ממרחק, בשיפוע מושלם.
+      </p>
+    </div>
+  </article>
+
+  <CTASection variant="inline" />
+
+  <!-- קישור לחזרה -->
+  <section class="container-page pb-14">
+    <MosaicDivider class="mb-8" />
+    <div class="text-center">
+      <a
+        href={url('/tours')}
+        class="inline-block rounded-full bg-sea-500 px-6 py-2.5 font-medium text-sand-50 transition-colors hover:bg-sea-600"
+      >
+        לכל הסיורים
+      </a>
+    </div>
+  </section>
+</BaseLayout>
