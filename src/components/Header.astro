@@ -7,7 +7,7 @@ const isActive = (href: string) =>
   href === '/' ? current === '/' : current.startsWith(href);
 ---
 
-<header class="sticky top-0 z-50 border-b border-sand-300/70 bg-sand-50/85 backdrop-blur-md">
+<header class="sticky top-0 z-50 border-b border-gold-500/20 bg-sea-600/85 backdrop-blur-md">
   <div class="container-page flex items-center justify-between py-3">
     <!-- ניווט דסקטופ (מימין) -->
     <nav class="hidden items-center gap-7 md:flex" aria-label="ניווט ראשי">
@@ -40,7 +40,7 @@ const isActive = (href: string) =>
         </svg>
       </summary>
       <nav
-        class="absolute start-0 mt-2 w-52 rounded-lg border border-sand-300 bg-sand-50 p-2 shadow-[var(--shadow-warm)]"
+        class="absolute start-0 mt-2 w-52 rounded-lg border border-gold-500/20 bg-sea-600 p-2 shadow-[var(--shadow-warm)]"
         aria-label="ניווט נייד"
       >
         {
@@ -48,7 +48,7 @@ const isActive = (href: string) =>
             <a
               href={url(item.href)}
               class:list={[
-                'block rounded-md px-3 py-2.5 text-[0.98rem] font-medium hover:bg-sand-100',
+                'block rounded-md px-3 py-2.5 text-[0.98rem] font-medium hover:bg-sea-500',
                 isActive(item.href) ? 'text-terracotta-500' : 'text-ink-700',
               ]}
             >

@@ -12,7 +12,7 @@ const { title, description, category, heroImage, heroImageAlt } = post.data;
 
 <article
   class:list={[
-    'group relative flex flex-col overflow-hidden rounded-xl border border-sand-300/70 bg-sand-50 shadow-sm transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-warm)]',
+    'group relative flex flex-col overflow-hidden rounded-xl border border-gold-500/20 bg-sea-500 shadow-sm transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-warm)]',
     featured ? 'md:flex-row' : '',
   ]}
 >
@@ -28,7 +28,7 @@ const { title, description, category, heroImage, heroImageAlt } = post.data;
   </a>
 
   <div class:list={['flex flex-1 flex-col p-5', featured ? 'md:justify-center md:p-8' : '']}>
-    <span class="mb-3 inline-flex w-fit items-center rounded-full bg-sea-500/10 px-3 py-1 text-xs font-medium text-sea-600">
+    <span class="mb-3 inline-flex w-fit items-center rounded-full bg-gold-500/15 px-3 py-1 text-xs font-medium text-gold-400">
       {category}
     </span>
     <h3

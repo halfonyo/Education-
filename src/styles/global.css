@@ -1,46 +1,46 @@
 @import 'tailwindcss';
 
 /* ==========================================================================
-   מערכת עיצוב — ים-תיכוני חם | קיסריה העתיקה
+   מערכת עיצוב — זהב וים | קיסריה העתיקה (ערכת ביזנטית כהה)
    ========================================================================== */
 
 @theme {
   /* --- פלטת צבעים --- */
-  /* רקעים: גיר / חול */
-  --color-sand-50: #faf6ee;
-  --color-sand-100: #f6f0e6;
-  --color-sand-200: #ede3d1;
-  --color-sand-300: #e0d0b4;
-  --color-sand-400: #ceb891;
+  /* "sand" = משפחת קרם/זהב בהיר לטקסט ולשבבים בהירים על רקע כהה */
+  --color-sand-50: #f5edd6;
+  --color-sand-100: #ece2c6;
+  --color-sand-200: #ddceac;
+  --color-sand-300: #c7b48c;
+  --color-sand-400: #b09a6f;
 
-  /* טרקוטה — הדגשה חמה */
-  --color-terracotta-400: #c97b4a;
-  --color-terracotta-500: #b65d3c;
-  --color-terracotta-600: #9c4a2e;
+  /* "terracotta" מופה לזהב — הדגשה ראשית (כפתורים, קישורים) */
+  --color-terracotta-400: #e3c67a;
+  --color-terracotta-500: #d4ad57;
+  --color-terracotta-600: #b8923f;
 
-  /* כחול-ים — הדגשה קרירה */
-  --color-sea-400: #3f7d8c;
-  --color-sea-500: #2e5e6e;
-  --color-sea-600: #234a58;
-  --color-sea-700: #1b3944;
+  /* "sea" = משפחת ירוק-ים עמוק, משטחים כהים */
+  --color-sea-400: #3a8791;
+  --color-sea-500: #17444a;
+  --color-sea-600: #123b40;
+  --color-sea-700: #0d2f33;
 
-  /* זהב עתיק — הדגשות דקות */
-  --color-gold-400: #d0b473;
-  --color-gold-500: #c2a059;
-  --color-gold-600: #a5843f;
+  /* זהב עתיק — קווי שיער והדגשות דקות */
+  --color-gold-400: #dcbb6a;
+  --color-gold-500: #c8a24a;
+  --color-gold-600: #c9a54c;
 
-  /* טקסט — פחם חם */
-  --color-ink-900: #2a231c;
-  --color-ink-700: #4a3f33;
-  --color-ink-500: #6b5e4e;
+  /* "ink" = טקסט ראשי, כעת בגווני קרם על רקע כהה */
+  --color-ink-900: #f4ecd6;
+  --color-ink-700: #d8ccac;
+  --color-ink-500: #ab9f80;
 
   /* --- טיפוגרפיה --- */
-  --font-serif: 'Bellefair', 'Frank Ruhl Libre', 'Times New Roman', serif;
+  --font-serif: 'Suez One', 'Frank Ruhl Libre', 'Times New Roman', serif;
   --font-sans: 'Heebo', 'Assistant', system-ui, sans-serif;
 
   /* --- רדיוסים וצללים --- */
   --radius-card: 0.5rem;
-  --shadow-warm: 0 18px 40px -22px rgba(42, 35, 28, 0.45);
+  --shadow-warm: 0 22px 48px -24px rgba(0, 0, 0, 0.6);
 }
 
 /* ==========================================================================
@@ -54,10 +54,10 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-ink-900);
-  background-color: var(--color-sand-100);
-  /* מרקם נייר/אבן עדין ברקע */
+  background-color: var(--color-sea-600);
+  /* מרקם עדין של זהב על רקע כהה */
   background-image:
-    radial-gradient(rgba(166, 132, 63, 0.05) 1px, transparent 1px);
+    radial-gradient(rgba(200, 162, 74, 0.06) 1px, transparent 1px);
   background-size: 22px 22px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
@@ -68,8 +68,8 @@ body {
 @layer base {
   h1, h2, h3, h4, .font-serif {
     font-family: var(--font-serif);
-    font-weight: 700;
-    /* Bellefair קיים במשקל אחד בלבד — מונע bold מסונתז (מכוער) על כותרות */
+    font-weight: 400;
+    /* Suez One קיים במשקל אחד בלבד — מונע bold מסונתז מכוער */
     font-synthesis: none;
     letter-spacing: 0;
     line-height: 1.2;
@@ -85,11 +85,11 @@ body {
   text-decoration-thickness: 1px;
 }
 .prose-body a:hover {
-  color: var(--color-terracotta-600);
+  color: var(--color-terracotta-400);
 }
 
 /* ==========================================================================
-   רכיבים עיצוביים — סגנון מגזין ים-תיכוני
+   רכיבים עיצוביים — סגנון ביזנטי, זהב על ים
    ========================================================================== */
 
 /* קו תחתון זהב דק לכותרות סעיף */
@@ -102,7 +102,7 @@ body {
   width: 3.5rem;
   height: 3px;
   margin-top: 0.75rem;
-  background: linear-gradient(90deg, var(--color-gold-500), var(--color-terracotta-400));
+  background: linear-gradient(90deg, var(--color-gold-500), var(--color-gold-400));
   border-radius: 2px;
 }
 
@@ -149,7 +149,7 @@ body {
   font-size: 1.35rem;
   margin-top: 1.6em;
   margin-bottom: 0.5em;
-  color: var(--color-sea-600);
+  color: var(--color-gold-400);
 }
 .prose-body ul, .prose-body ol {
   margin-block: 1.1em;
@@ -168,16 +168,23 @@ body {
   transform: rotate(45deg);
 }
 .prose-body blockquote {
-  border-inline-start: 4px solid var(--color-terracotta-400);
-  background: var(--color-sand-50);
+  border-inline-start: 4px solid var(--color-gold-500);
+  background: var(--color-sea-500);
   padding: 1rem 1.25rem;
   margin-block: 1.5em;
-  font-family: var(--font-serif);
+  font-family: 'Frank Ruhl Libre', serif;
   font-size: 1.2rem;
   color: var(--color-ink-900);
+  border-radius: 0.5rem;
 }
 .prose-body img {
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-warm);
   margin-block: 1.8em;
+}
+
+/* מאמר מוסגר (aside) בתוך גוף המאמר — התאמה לרקע הכהה */
+.prose-body aside {
+  background: var(--color-sea-500) !important;
+  color: var(--color-ink-700);
 }

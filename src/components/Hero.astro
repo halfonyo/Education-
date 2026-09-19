@@ -16,19 +16,19 @@ const { image, imageAlt } = Astro.props;
     fetchpriority="high"
     class="absolute inset-0 -z-10 h-full w-full object-cover object-[28%_center] md:object-center"
   />
-  <!-- הילה בהירה מאחורי הטקסט לקריאוּת על גבי הרקע הבהיר -->
+  <!-- הכהיה מאחורי הטקסט לקריאוּת ולאווירת "זהב וים" -->
   <div
     class="absolute inset-0 -z-10"
-    style="background: radial-gradient(ellipse 92% 55% at 50% 52%, rgba(250,246,238,0.72) 0%, rgba(250,246,238,0.34) 48%, rgba(250,246,238,0) 78%);"
+    style="background: radial-gradient(ellipse 100% 72% at 50% 54%, rgba(13,43,48,0.82) 0%, rgba(13,43,48,0.58) 46%, rgba(13,43,48,0.20) 82%);"
     aria-hidden="true"
   >
   </div>
 
   <div class="container-page flex min-h-[86svh] flex-col items-center justify-center py-24 text-center md:min-h-[82vh] md:py-28">
     <div class="hero-text animate-fade-up">
-      <h1 class="font-serif font-black leading-[0.95] text-sea-700">
+      <h1 class="font-serif font-black leading-[0.95] text-gold-400">
         <span class="block text-7xl sm:text-7xl md:text-8xl">קיסריה</span>
-        <span class="mt-2 block text-3xl text-sea-600 sm:text-4xl md:mt-3 md:text-5xl">
+        <span class="mt-2 block text-3xl text-ink-900 sm:text-4xl md:mt-3 md:text-5xl">
           עיר מתוך חלום
         </span>
       </h1>
@@ -38,13 +38,13 @@ const { image, imageAlt } = Astro.props;
       <div class="mt-8 flex flex-wrap justify-center gap-3 md:mt-9">
         <a
           href={url('/articles')}
-          class="rounded-full bg-terracotta-500 px-7 py-3 font-medium text-sand-50 shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-terracotta-600"
+          class="rounded-full bg-terracotta-500 px-7 py-3 font-medium text-sea-700 shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-terracotta-400"
         >
           לקריאת המאמרים
         </a>
         <a
           href={url('/tours')}
-          class="rounded-full border border-sea-600/40 bg-sand-50/70 px-7 py-3 font-medium text-sea-700 backdrop-blur-sm transition-colors hover:bg-sand-50"
+          class="rounded-full border border-gold-500/40 bg-sea-700/40 px-7 py-3 font-medium text-ink-900 backdrop-blur-sm transition-colors hover:bg-sea-700/70"
         >
           על הסיורים
         </a>
@@ -55,9 +55,9 @@ const { image, imageAlt } = Astro.props;
 
 <style>
   .hero-text h1 {
-    text-shadow: 0 1px 22px rgba(250, 246, 238, 0.85);
+    text-shadow: 0 2px 24px rgba(11, 26, 32, 0.8);
   }
   .hero-text p {
-    text-shadow: 0 1px 14px rgba(250, 246, 238, 0.9);
+    text-shadow: 0 1px 16px rgba(11, 26, 32, 0.85);
   }
 </style>

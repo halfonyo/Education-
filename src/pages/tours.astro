@@ -63,7 +63,7 @@ const jsonLd = {
   jsonLd={jsonLd}
 >
   <section class="container-page pt-16 pb-8 text-center">
-    <p class="mb-2 text-sm font-medium tracking-wide text-sea-500">סיורים</p>
+    <p class="mb-2 text-sm font-medium tracking-wide text-gold-400">סיורים</p>
     <h1 class="font-serif text-4xl text-ink-900 sm:text-5xl">חוויה שמתחילה באבן אחת</h1>
     <p class="mx-auto mt-4 max-w-2xl text-lg text-ink-700">
       כל סיור נבנה סביב הקבוצה שלכם: הקצב, העניין והזמן. אלה כמה מסלולים נפוצים,
@@ -76,10 +76,10 @@ const jsonLd = {
     <div class="grid gap-7 md:grid-cols-3">
       {
         tours.map((tour) => (
-          <div class="flex flex-col rounded-2xl border border-sand-300/70 bg-sand-50 p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-warm)]">
+          <div class="flex flex-col rounded-2xl border border-gold-500/20 bg-sea-500 p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-warm)]">
             <h2 class="font-serif text-2xl text-ink-900">{tour.name}</h2>
             <div class="mt-3 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-sea-500/10 px-3 py-1 text-sea-600">{tour.duration}</span>
+              <span class="rounded-full bg-gold-500/15 px-3 py-1 text-gold-400">{tour.duration}</span>
               <span class="rounded-full bg-gold-500/15 px-3 py-1 text-gold-600">{tour.audience}</span>
             </div>
             <p class="mt-4 flex-1 text-ink-700">{tour.desc}</p>
@@ -127,7 +127,7 @@ const jsonLd = {
     <h2 class="font-serif text-3xl text-ink-900">מוכנים לתאם?</h2>
     <p class="mt-4 text-ink-700">ספרו לי מי אתם ומתי מתאים לכם, ואחזור אליכם עם הצעה מותאמת.</p>
     <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <a href={url('/contact')} class="rounded-full bg-terracotta-500 px-8 py-3 font-medium text-sand-50 transition-colors hover:bg-terracotta-600">
+      <a href={url('/contact')} class="rounded-full bg-terracotta-500 px-8 py-3 font-medium text-sea-700 transition-colors hover:bg-terracotta-600">
         לכל דרכי הקשר
       </a>
     </div>
