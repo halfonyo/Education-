@@ -28,8 +28,8 @@ export const nav = [
 ];
 
 // ---------------------------------------------------------------------------
-// טיפול בנתיב בסיס (base path) — נדרש בפריסה ל-GitHub Pages תחת תת-נתיב.
-// מקומית BASE_URL = "/" ולכן url() לא משנה דבר; ב-Pages הוא "/Education-/".
+// טיפול בנתיב בסיס (base path). ב-Cloudflare Pages האתר מוגש מהשורש,
+// לכן BASE_URL = "/" ו-url() אינו מוסיף קידומת. נשמר לגמישות עתידית.
 // ---------------------------------------------------------------------------
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 export function url(path: string): string {

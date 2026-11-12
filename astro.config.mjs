@@ -3,11 +3,9 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-// עדכן את הכתובת לדומיין הסופי כשיהיה
 export default defineConfig({
-  // כתובת האתר ב-GitHub Pages. כשיהיה דומיין משלך — עדכן כאן והסר את base.
-  site: 'https://halfonyo.github.io',
-  base: '/Education-',
+  // דומיין פרטי ב-Cloudflare Pages. האתר מוגש מהשורש, לכן אין base.
+  site: 'https://kesariastory.co.il',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
   vite: {
