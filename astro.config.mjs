@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   // דומיין פרטי ב-Cloudflare Pages. האתר מוגש מהשורש, לכן אין base.
-  site: 'https://kesariastory.co.il',
+  site: 'https://caesareastory.co.il',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
   vite: {
