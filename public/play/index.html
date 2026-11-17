@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>סיפור מהדרך: קיסריה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d2f33; --bg2: #123b40; --card: #17444a; --line: rgba(220,187,106,.28);
+    --gold: #dcbb6a; --gold2: #c8a24a; --ink: #f4ecd6; --ink2: #d8ccac; --ink3: #ab9f80;
+    --ok: #7fc8a0; --bad: #e39a86;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Heebo', system-ui, sans-serif; }
+  body { min-height: 100dvh; line-height: 1.65; -webkit-tap-highlight-color: transparent; }
+  h1, h2, h3 { font-family: 'Suez One', 'Heebo', serif; font-weight: 400; margin: 0; line-height: 1.25; }
+  button { font: inherit; cursor: pointer; }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 0 18px 40px; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 0 10px; }
+  .brand { font-family: 'Suez One', serif; color: var(--gold); font-size: 1.05rem; }
+  .brand small { display: block; font-family: 'Heebo', sans-serif; color: var(--ink3); font-size: .74rem; }
+  .ghost { background: none; border: 1px solid var(--line); color: var(--ink2); border-radius: 999px; padding: 6px 14px; font-size: .85rem; }
+  .sketch { background: rgba(220,187,106,.12); border: 1px dashed var(--line); color: var(--gold); border-radius: 12px; padding: 8px 12px; font-size: .82rem; margin-bottom: 16px; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { color: var(--ink2); margin: 8px 0 20px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; margin-bottom: 16px; width: 100%; text-align: right; color: inherit; padding: 0; display: block; }
+  .card img, .shot { width: 100%; height: 150px; object-fit: cover; display: block; background: var(--bg2); }
+  .card .in { padding: 14px 16px 16px; }
+  .card h2 { font-size: 1.3rem; }
+  .tag { color: var(--gold); font-size: .85rem; margin-bottom: 2px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .pill { border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; font-size: .76rem; color: var(--ink2); }
+  .pill.gold { background: var(--gold); color: #1b2a2c; border-color: var(--gold); font-weight: 700; }
+  .btn { display: block; width: 100%; background: var(--gold); color: #1b2a2c; border: 0; border-radius: 14px; padding: 14px 16px; font-weight: 700; font-size: 1.05rem; margin-top: 14px; text-align: center; text-decoration: none; }
+  .btn.alt { background: none; color: var(--gold); border: 1px solid var(--gold); }
+  .btn.small { padding: 10px 14px; font-size: .92rem; }
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin-bottom: 14px; }
+  .panel h3 { font-size: 1.1rem; color: var(--gold); margin-bottom: 6px; }
+  .story { font-size: 1.04rem; color: var(--ink); }
+  .steps { list-style: none; padding: 0; margin: 10px 0 0; counter-reset: s; }
+  .steps li { counter-increment: s; padding: 7px 0; border-top: 1px solid rgba(255,255,255,.07); display: flex; gap: 10px; align-items: baseline; }
+  .steps li::before { content: counter(s); color: var(--gold); font-family: 'Suez One', serif; min-width: 1.4em; }
+  .steps .chk { margin-inline-start: auto; font-size: .7rem; color: var(--ink3); white-space: nowrap; }
+  .prog { display: flex; gap: 4px; margin: 4px 0 14px; }
+  .prog i { flex: 1; height: 5px; border-radius: 3px; background: rgba(255,255,255,.12); }
+  .prog i.done { background: var(--gold); }
+  .prog i.now { background: var(--ink2); }
+  .dist { font-family: 'Suez One', serif; font-size: 2.4rem; color: var(--gold); text-align: center; margin: 6px 0 0; }
+  .hint { text-align: center; color: var(--ink3); font-size: .86rem; }
+  .opts { display: grid; gap: 8px; margin-top: 10px; }
+  .opt { background: var(--bg2); border: 1px solid var(--line); color: var(--ink); border-radius: 12px; padding: 12px 14px; text-align: right; font-size: 1rem; }
+  .opt.right { border-color: var(--ok); background: rgba(127,200,160,.15); }
+  .opt.wrong { border-color: var(--bad); background: rgba(227,154,134,.12); }
+  .fb { margin-top: 10px; color: var(--ok); }
+  .fb.bad { color: var(--bad); }
+  .center { text-align: center; }
+  .big { font-size: 3rem; }
+  .muted { color: var(--ink3); font-size: .86rem; }
+  a { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">סיפור מהדרך<small>קיסריה עם ד"ר יוחאי חלפון</small></div>
+    <button class="ghost" id="homeBtn" hidden>כל המסלולים</button>
+  </div>
+  <div id="app"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  var Q = window.QUEST, app = document.getElementById('app'), homeBtn = document.getElementById('homeBtn');
+  var watchId = null, pos = null;
+  var WA = 'https://wa.me/972523003629?text=' + encodeURIComponent('היי יוחאי, סיימתי מסלול ב"סיפור מהדרך" ואשמח לשמוע על סיור מודרך');
+
+  // ── שמירת התקדמות (בטלפון בלבד) ──
+  function load() { try { return JSON.parse(localStorage.getItem('quest-progress') || '{}'); } catch (e) { return {}; } }
+  function save(p) { try { localStorage.setItem('quest-progress', JSON.stringify(p)); } catch (e) {} }
+  var progress = load();
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function img(name) { return 'img/' + name + '.webp'; }
+  function route(id) { return Q.routes.filter(function (r) { return r.id === id; })[0]; }
+  function mapsUrl(st) { return 'https://www.google.com/maps/search/?api=1&query=' + st.lat + ',' + st.lon; }
+  function meters(a, b) {
+    var R = 6371000, t = Math.PI / 180, dLat = (b.lat - a.lat) * t, dLon = (b.lon - a.lon) * t;
+    var x = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a.lat * t) * Math.cos(b.lat * t) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return 2 * R * Math.asin(Math.sqrt(x));
+  }
+  function stopWatch() { if (watchId !== null && navigator.geolocation) { navigator.geolocation.clearWatch(watchId); } watchId = null; }
+  function show(html) { app.innerHTML = html; window.scrollTo(0, 0); }
+
+  // ── מסך הבית ──
+  function home() {
+    stopWatch(); homeBtn.hidden = true;
+    var cards = Q.routes.map(function (r) {
+      var p = progress[r.id], state = '';
+      if (p && p.done) state = '<span class="pill gold">הושלם</span>';
+      else if (p && p.i > 0) state = '<span class="pill gold">בתחנה ' + (p.i + 1) + ' מתוך ' + r.stops.length + '</span>';
+      return '<button class="card" data-route="' + r.id + '"><img src="' + img(r.img) + '" alt="" loading="lazy" /><div class="in">' +
+        '<div class="tag">' + esc(r.tagline) + '</div><h2>' + esc(r.title) + '</h2>' +
+        '<div class="meta">' + state + '<span class="pill">' + esc(r.audience) + '</span><span class="pill">' + esc(r.time) + '</span>' +
+        '<span class="pill">' + r.stops.length + ' תחנות</span><span class="pill">' + esc(r.ticket) + '</span></div></div></button>';
+    }).join('');
+    show('<div class="sketch">סקיצה לבדיקה. הטקסטים הם טיוטה, וחלק מהמיקומים עוד לא אומתו בשטח.</div>' +
+      '<div class="hero"><h1>קיסריה, בקצב שלכם</h1><p>בחרו מסלול. הטלפון יוביל אתכם מתחנה לתחנה, ובכל אחת מחכים סיפור ומשימה.</p></div>' + cards);
+  }
+
+  // ── פתיחת מסלול ──
+  function intro(r) {
+    stopWatch(); homeBtn.hidden = false;
+    var p = progress[r.id], seen = {}, list = '';
+    r.stops.forEach(function (s) {
+      if (seen[s.s]) return; seen[s.s] = 1;
+      var st = Q.stations[s.s];
+      list += '<li><span>' + esc(st.name) + '</span>' + (st.conf === 'check' ? '<span class="chk">מיקום לאימות</span>' : '') + '</li>';
+    });
+    show('<img class="shot" style="border-radius:18px;height:190px;margin-bottom:14px" src="' + img(r.img) + '" alt="" />' +
+      '<div class="tag">' + esc(r.tagline) + '</div><h1 style="font-size:1.8rem">' + esc(r.title) + '</h1>' +
+      '<div class="meta" style="margin-bottom:14px"><span class="pill">' + esc(r.audience) + '</span><span class="pill">' + esc(r.time) + '</span>' +
+      '<span class="pill">' + esc(r.dist) + '</span><span class="pill">רמה: ' + esc(r.level) + '</span><span class="pill">' + esc(r.ticket) + '</span></div>' +
+      '<div class="panel"><p class="story" style="margin:0">' + esc(r.intro) + '</p></div>' +
+      '<div class="panel"><h3>התחנות במסלול</h3><ol class="steps">' + list + '</ol></div>' +
+      '<button class="btn" id="go">' + (p && p.i > 0 && !p.done ? 'ממשיכים מתחנה ' + (p.i + 1) : 'יוצאים לדרך') + '</button>' +
+      (p && (p.i > 0 || p.done) ? '<button class="btn alt small" id="reset">להתחיל מההתחלה</button>' : ''));
+    document.getElementById('go').onclick = function () {
+      if (!progress[r.id] || progress[r.id].done) progress[r.id] = { i: 0, score: 0 };
+      save(progress); walk(r);
+    };
+    var rs = document.getElementById('reset');
+    if (rs) rs.onclick = function () { progress[r.id] = { i: 0, score: 0 }; save(progress); intro(r); };
+  }
+
+  function bar(r, i) {
+    return '<div class="prog">' + r.stops.map(function (_, k) { return '<i class="' + (k < i ? 'done' : k === i ? 'now' : '') + '"></i>'; }).join('') + '</div>';
+  }
+
+  // ── הליכה אל התחנה ──
+  function walk(r) {
+    var p = progress[r.id], i = p.i, stop = r.stops[i], st = Q.stations[stop.s];
+    // תחנה שחוזרת פעמיים ברצף: אין צורך ללכת שוב
+    if (i > 0 && r.stops[i - 1].s === stop.s) { return station(r); }
+    homeBtn.hidden = false;
+    show(bar(r, i) + '<div class="muted">תחנה ' + (i + 1) + ' מתוך ' + r.stops.length + '</div>' +
+      '<h1 style="font-size:1.6rem;margin-bottom:12px">לכו אל: ' + esc(st.name) + '</h1>' +
+      '<div class="panel center"><div class="dist" id="dist">...</div><div class="hint" id="hint">מחפש את המיקום שלכם</div></div>' +
+      '<a class="btn alt small" target="_blank" rel="noopener" href="' + mapsUrl(st) + '">הראו לי במפה</a>' +
+      '<button class="btn" id="arrive" style="opacity:.55">הגעתי</button>' +
+      '<p class="muted center">התחנה תיפתח לבד כשתתקרבו. אם ה-GPS לא מדויק, לחצו "הגעתי".</p>');
+    var dist = document.getElementById('dist'), hint = document.getElementById('hint'), arrive = document.getElementById('arrive');
+    arrive.onclick = function () { stopWatch(); station(r); };
+    stopWatch();
+    if (!navigator.geolocation) { dist.textContent = '—'; hint.textContent = 'המכשיר לא תומך באיתור מיקום. לחצו "הגעתי" כשתגיעו.'; return; }
+    try {
+      watchId = navigator.geolocation.watchPosition(function (g) {
+        pos = { lat: g.coords.latitude, lon: g.coords.longitude };
+        var d = Math.round(meters(pos, st));
+        dist.textContent = d > 999 ? (d / 1000).toFixed(1) + ' ק"מ' : d + ' מ\'';
+        hint.textContent = 'דיוק המיקום: כ-' + Math.round(g.coords.accuracy) + ' מ\'';
+        if (d <= st.r) { stopWatch(); station(r); }
+        else if (d <= st.r * 2) { arrive.style.opacity = 1; }
+      }, function () {
+        dist.textContent = '—'; hint.textContent = 'אין גישה למיקום. אפשרו מיקום בדפדפן, או לחצו "הגעתי" כשתגיעו.'; arrive.style.opacity = 1;
+      }, { enableHighAccuracy: true, maximumAge: 5000, timeout: 20000 });
+    } catch (e) { dist.textContent = '—'; hint.textContent = 'לחצו "הגעתי" כשתגיעו.'; arrive.style.opacity = 1; }
+  }
+
+  // ── התחנה עצמה ──
+  function station(r) {
+    var p = progress[r.id], i = p.i, stop = r.stops[i], st = Q.stations[stop.s], t = stop.task, taskHtml;
+    if (t.type === 'quiz') {
+      taskHtml = '<h3>חידה</h3><div>' + esc(t.q) + '</div><div class="opts">' +
+        t.options.map(function (o, k) { return '<button class="opt" data-k="' + k + '">' + esc(o) + '</button>'; }).join('') + '</div><div id="fb"></div>';
+    } else {
+      taskHtml = '<h3>' + (t.type === 'photo' ? 'משימת צילום' : 'משימה') + '</h3><div>' + esc(t.q) + '</div>';
+    }
+    show(bar(r, i) + '<img class="shot" style="border-radius:18px;height:180px;margin-bottom:12px" src="' + img(st.img) + '" alt="" />' +
+      '<div class="muted">תחנה ' + (i + 1) + ' מתוך ' + r.stops.length + '</div><h1 style="font-size:1.6rem;margin-bottom:12px">' + esc(st.name) + '</h1>' +
+      '<div class="panel"><p class="story" style="margin:0">' + esc(stop.story) + '</p></div>' +
+      '<div class="panel">' + taskHtml + '</div>' +
+      '<button class="btn" id="next" ' + (t.type === 'quiz' ? 'hidden' : '') + '>' + (t.type === 'quiz' ? 'ממשיכים' : t.type === 'photo' ? 'צילמתי, ממשיכים' : 'עשינו, ממשיכים') + '</button>');
+    var next = document.getElementById('next'), tries = 0;
+    if (t.type === 'quiz') {
+      Array.prototype.forEach.call(app.querySelectorAll('.opt'), function (b) {
+        b.onclick = function () {
+          var k = +b.getAttribute('data-k'), fb = document.getElementById('fb');
+          if (k === t.a) {
+            b.className = 'opt right'; fb.className = 'fb'; fb.textContent = t.ok;
+            if (tries === 0) p.score = (p.score || 0) + 1;
+            Array.prototype.forEach.call(app.querySelectorAll('.opt'), function (x) { x.disabled = true; });
+            next.hidden = false;
+          } else { tries++; b.className = 'opt wrong'; b.disabled = true; fb.className = 'fb bad'; fb.textContent = 'לא בדיוק. קראו שוב את הסיפור ונסו שוב.'; }
+        };
+      });
+    }
+    next.onclick = function () {
+      p.i = i + 1;
+      if (p.i >= r.stops.length) { p.done = true; save(progress); finish(r); } else { save(progress); walk(r); }
+    };
+  }
+
+  // ── סיום ──
+  function finish(r) {
+    stopWatch();
+    var p = progress[r.id], quizzes = r.stops.filter(function (s) { return s.task.type === 'quiz'; }).length;
+    show('<div class="center" style="padding-top:20px"><div class="big">🏛️</div><h1 style="font-size:1.9rem">סיימתם!</h1>' +
+      (quizzes ? '<p class="muted">עניתם נכון בניסיון ראשון על ' + (p.score || 0) + ' מתוך ' + quizzes + ' חידות</p>' : '') + '</div>' +
+      '<div class="panel"><p class="story" style="margin:0">' + esc(r.outro) + '</p></div>' +
+      '<div class="panel"><h3>רוצים לשמוע את השאר?</h3><div>בסיור מודרך עם ד"ר יוחאי חלפון שומעים את הסיפורים שלא נכנסו לכאן.</div>' +
+      '<a class="btn small" target="_blank" rel="noopener" href="' + WA + '">לתיאום סיור בוואטסאפ</a></div>' +
+      '<button class="btn alt" id="more">למסלול נוסף</button>');
+    document.getElementById('more').onclick = home;
+  }
+
+  app.addEventListener('click', function (e) {
+    var c = e.target.closest ? e.target.closest('[data-route]') : null;
+    if (c) intro(route(c.getAttribute('data-route')));
+  });
+  homeBtn.onclick = home;
+  home();
+})();
+</script>
+</body>
+</html>
